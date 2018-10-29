@@ -8,7 +8,7 @@ var test = require(".././database/database");
 router.post('/', function (req, res, next) {
     console.log("Yeet");
     var firstname = req.body.firstname;
-    test.add(firstname);
+    test.addToDb(firstname);
     res.render('index', {title: firstname});
 });
 
