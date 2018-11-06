@@ -12,6 +12,7 @@ console.log(typeof db);
 module.exports = {addToDb, getAllPeople};
 
 
+
 function addToDb(firstname) {
     var myobj = {identifier: firstname};
     var collection = dat.collection("clients");
@@ -21,19 +22,9 @@ function addToDb(firstname) {
     });
 }
 
-function getAllPeople() {
+function getAllPeople(cb) {
     var collection = dat.collection("clients");
-    var array = [];
-
-    var find = collection.find();
-    find.forEach(function(doc) {
-        console.log("-> " + doc);
-        array.push(doc);
-    }, function(err) {
-        // done or error
-    });
-    console.log(array);
-    return array;
+    return collection.find().toArray(cb);
 }
 
 
