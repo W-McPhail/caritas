@@ -12,7 +12,11 @@ console.log(typeof db);
 module.exports = {addToDb, getAllPeople};
 
 
+/*
+    Adds a document to the clients collection in form
 
+    identifier = name
+ */
 function addToDb(firstname) {
     var myobj = {identifier: firstname};
     var collection = dat.collection("clients");
@@ -22,9 +26,12 @@ function addToDb(firstname) {
     });
 }
 
+/*
+    Return all items in clients collection.
+    MongoDB is async so the CB parameter is a callback function that is called with the result of query as an array of items
+ */
 function getAllPeople(cb) {
-    var collection = dat.collection("clients");
-    return collection.find().toArray(cb);
+    dat.collection("clients").find().toArray(cb);
 }
 
 

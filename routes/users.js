@@ -4,13 +4,18 @@ var router = express.Router();
 var database = require("../database/database");
 
 router.get('/', function (req, res, next) {
-     database.getAllPeople(function (err, data) {
+    //Gets all users and returns value in data
+    database.getAllPeople(function (err, data) {
         if (err) {
             console.log(err);
             return res(err);
-        } else {
-            console.log(data);
-            return res.json(data);
+        } else {//U
+
+            data.forEach(person => {
+                res.write(person.identifier+"\n");
+            });
+            // console.log(data);
+            res.end();
         }
     });
 });
