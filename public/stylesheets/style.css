@@ -1,4 +1,4 @@
-.center {
+/*.center {
     text-align: center;
 }
 
@@ -16,6 +16,34 @@
 .language-button {
     padding: 10px;
 }
-html {
-    background-color: #a7d0f3;
+{
+    background-color: red;
+}*/
+
+.welcomeScreen {
+    background-color: #8eabff;
+    display: grid;
+    grid-template-areas:
+            "welcome welcome"
+            "guest member" 
+            "language language";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+}
+
+.welcome {
+    grid-area: welcome;
+}
+
+.language {
+    grid-area: language;
+}
+
+.guest {
+    grid-area: guest;
+}
+
+.member {
+    grid-area: member;
 }

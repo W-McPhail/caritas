@@ -1,0 +1,10 @@
+extends index
+block login
+    form(action='/signup', method='POST')
+        input(
+        type = 'text'
+        name = 'firstname'
+        )
+        button(type='submit',
+        name = 'GoButton'
+        ) Go!
