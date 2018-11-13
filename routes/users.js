@@ -3,7 +3,10 @@ var router = express.Router();
 
 var database = require("../database/database");
 
+
+
 router.get('/', function (req, res, next) {
+
     var s = database.getAllPeople();
 
     console.log("s -> " + s);
@@ -13,7 +16,9 @@ router.get('/', function (req, res, next) {
         'Expires': new Date().toUTCString()
     });
     s.forEach(value => {
+            console.log("a");
             console.log(value.identifier);
+            console.log("b");
             res.write(value.identifier);
             res.write("\n<br>");
         }

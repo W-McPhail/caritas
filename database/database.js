@@ -23,12 +23,13 @@ function addToDb(firstname) {
 
 function getAllPeople() {
     var collection = dat.collection("clients");
-    var array = [];
+    var array = ["test"];
 
     var find = collection.find();
+    //console.log(find);
     find.forEach(function(doc) {
-        console.log("-> " + doc);
-        array.push(doc);
+        //console.log("-> " + doc);
+       array.push(doc);
     }, function(err) {
         // done or error
     });
