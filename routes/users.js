@@ -3,30 +3,21 @@ var router = express.Router();
 
 var database = require("../database/database");
 
-
-
 router.get('/', function (req, res, next) {
+    //Gets all users and returns value in data
+    database.getAllPeople(function (err, data) {
+        if (err) {
+            console.log(err);
+            return res(err);
+        } else {//U
 
-    var s = database.getAllPeople();
-
-    console.log("s -> " + s);
-    res.writeHead(200, {
-        'Content-Type': 'text/html',
-        'Content-Length':0,
-        'Expires': new Date().toUTCString()
-    });
-    s.forEach(value => {
-            console.log("a");
-            console.log(value.identifier);
-            console.log("b");
-            res.write(value.identifier);
-            res.write("\n<br>");
+            data.forEach(person => {
+                res.write(person.identifier+"\n");
+            });
+            // console.log(data);
+            res.end();
         }
-    );
-    res.end();
-    // console.log(s);
-    // console.log("s");
-    // res.write(s);
+    });
 });
 /* GET users listing. */
 

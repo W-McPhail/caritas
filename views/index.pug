@@ -1,15 +1,19 @@
 extends layout
 
-block content
-    h1= title
-    p Welcome to #{title}
-    form(action='/signup', method='POST')
-        input(
-            type = 'text'
-            name = 'firstname'
-        )
-        button(type='submit',
-        name = 'GoButton'
-        ) Go!
+block welcome
+    .welcome
+       h1 Welcome To Caritas Portchester
+
+block guest
+    .guest
+        h1 Guest Login
+        button(type='button', name="Guest Button")
+block member
+    .member
+        h1 Member Login
+        block login
+block language
+    .language
+        h1 Switch Language
 
 

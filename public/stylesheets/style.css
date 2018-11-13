@@ -1,8 +1,49 @@
-body {
-    padding: 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*.center {
+    text-align: center;
 }
 
-a {
-    color: #00B7FF;
+.caritas-header {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    font-size: 30px;
+}
+
+.language-selection {
+    margin-left: 30%;
+}
+.language-button {
+    padding: 10px;
+}
+{
+    background-color: red;
+}*/
+
+.welcomeScreen {
+    background-color: #8eabff;
+    display: grid;
+    grid-template-areas:
+            "welcome welcome"
+            "guest member" 
+            "language language";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+}
+
+.welcome {
+    grid-area: welcome;
+}
+
+.language {
+    grid-area: language;
+}
+
+.guest {
+    grid-area: guest;
+}
+
+.member {
+    grid-area: member;
 }
