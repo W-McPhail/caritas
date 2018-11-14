@@ -20,12 +20,15 @@
     background-color: red;
 }*/
 
-.welcomeScreen {
+body {
     background-color: #8eabff;
+}
+.welcomeScreen {
     display: grid;
-    grid-template-areas: "welcome welcome" "guest member" "language language";
+    grid-template-areas: "guest member" "language language";
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 90vh;
 }
 
 .welcome {
