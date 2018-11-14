@@ -2,10 +2,11 @@ extends layout
 
 block welcome
     .welcome
-       h1 Welcome To Caritas Portchester
+        h1 Welcome To Caritas Portchester
 
 block guest
     .guest
+        form(action="/signup", method = 'post')
         button(type='button', name="Guest Button", class="loginButton") Guest Login
 block member
     .member
