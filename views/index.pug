@@ -9,7 +9,9 @@ block guest
         button(type='button', name="Guest Button", class="loginButton") Guest Login
 block member
     .member
-        block login
+        .login
+            form(action='/signup', method='POST', class = "signIn")
+                input( type = 'text', name = 'firstname', placeholder= 'Enter ID')
 block language
     .language
         h1 Switch Language

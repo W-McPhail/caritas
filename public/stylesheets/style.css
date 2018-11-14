@@ -24,9 +24,8 @@
     background-color: #8eabff;
     display: grid;
     grid-template-areas: "welcome welcome" "guest member" "language language";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
 .welcome {
@@ -36,6 +35,8 @@
 
 .language {
     grid-area: language;
+    text-align: center;
+
 }
 
 .guest {
@@ -63,3 +64,7 @@
     padding: 20px;
 }
 
+.login {
+    font-size: 50px;
+    padding: 25px;
+}
