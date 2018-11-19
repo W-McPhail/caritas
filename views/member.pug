@@ -1,3 +1,13 @@
 extends layout
+block memberScreen
+    .memberScreen
+        .mealStay
+            button(type='button', onclick="if(document.getElementById('meals_now').innerText< " + max_meals + "){document.getElementById('meals_now').innerText++;}")
+            button(type='button', onclick="if(document.getElementById('meals_now').innerText>0){document.getElementById('meals_now').innerText--;}")
+            span#meals_now 0
+        .mealToGO
+            button(type='button', onclick="if(document.getElementById('meals_now').innerText< " + max_meals + "){document.getElementById('meals_now').innerText++;}")
+            button(type='button', onclick="if(document.getElementById('meals_now').innerText>0){document.getElementById('meals_now').innerText--;}")
+            span#meals_now 0
 
 
