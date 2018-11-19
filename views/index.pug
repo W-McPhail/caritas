@@ -1,18 +1,22 @@
 extends layout
 
-block welcome
-    .welcome
-        h1 Welcome To Caritas Portchester
+
+
+
 
 block guest
     .guest
-        form(action="/signup", method = 'post')
-        button(type='button', name="Guest Button", class="loginButton") Guest Login
+        form(action='/login', method='post', class='signIn')
+            input(type="hidden", name="type", value="guest")
+            button(type='submit', name="Guest Button", class="loginButton") Guest Login
 block member
     .member
         .login
-            form(action='/signup', method='POST', class = "signIn")
-                input( type = 'text', name = 'firstname', placeholder= 'Enter ID')
+            form(action='/login', method='POST', class = "signIn")
+                input(type="hidden", name="type", value="member")
+                input(type = 'text', name = 'id', placeholder= 'Enter ID')
+                button(type='submit', name="Member Login", class="loginButton") Member Login
+
 block language
     .language
         h1 Switch Language

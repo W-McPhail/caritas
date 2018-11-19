@@ -26,6 +26,13 @@ function addToDb(firstname) {
     });
 }
 
+function addMealsFromGuests(amount) {
+    var obj = {time: -1 }; //change to uxix timestamp
+    for (let i = 0; i < amount; i++) {
+            //add to db
+    }
+}
+
 /*
     Return all items in clients collection.
     MongoDB is async so the CB parameter is a callback function that is called with the result of query as an array of items
