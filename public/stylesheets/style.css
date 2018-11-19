@@ -32,7 +32,6 @@ body {
 }
 
 .welcome {
-    grid-area: welcome;
     text-align: center;
 }
 

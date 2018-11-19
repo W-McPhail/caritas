@@ -1,0 +1,11 @@
+extends member
+block guestScreen
+    .guestScreen
+        .mealStay
+            button(type='button', onclick="document.getElementById('meals_now').innerText++;")
+            button(type='button', onclick="document.getElementById('meals_now').innerText--;")
+            span#meals_now 0
+
+
+
+

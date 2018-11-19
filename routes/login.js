@@ -9,8 +9,10 @@ router.post('/', function (req, res, next) {
     var type = req.body.type;
     if (type === ("member")) {
         var memberId = req.body.id;
+        res.render('member', {title: "Member Login"})
+        console.log("potato");
     } else if (type === ("guest")) {
-        res.render('member', {title:"Guest Login"});
+        res.render('guest', {title:"Guest Login"});
     } else {
         res.write("we don't know what you tried to do! Sent type is '" + type + "'. Expected: member,guest");
         res.end();
