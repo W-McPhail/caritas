@@ -23,6 +23,7 @@
 body {
     background-color: #8eabff;
 }
+
 .welcomeScreen {
     display: grid;
     grid-template-areas: "guest member" "language language";
@@ -30,7 +31,6 @@ body {
     grid-template-rows: repeat(2, 1fr);
     height: 90vh;
 }
-
 
 .welcome {
     text-align: center;
@@ -70,4 +70,36 @@ body {
 .login {
     font-size: 50px;
     padding: 25px;
+}
+
+.guestScreen {
+    display: grid;
+    grid-template-areas: " plusGo spanGo minusGo" "plusStay spanStay minusStay";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 90vh;
+}
+
+.mealStay .plus {
+    grid-area: plusStay;
+}
+
+.mealStay .mealNumber {
+    grid-area: spanStay;
+}
+
+.mealStay .minus {
+    grid-area: minusStay;
+}
+
+.mealToGo .plus {
+    grid-area: plusGo;
+}
+
+.mealToGo .mealNumber {
+    grid-area: spanGo;
+}
+
+.mealToGo .minus {
+    grid-area: minusGo;
 }
