@@ -8,8 +8,8 @@ var logger = require('morgan');
 var app = express();
 
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/basicmongo');
+var indexRouter = require('./routes/home');
+var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 
 

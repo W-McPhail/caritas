@@ -71,7 +71,6 @@ body {
     font-size: 50px;
     padding: 25px;
 }
-
 .guestScreen {
     display: grid;
     grid-template-areas: " plusGo spanGo minusGo" "plusStay spanStay minusStay";
@@ -103,3 +102,4 @@ body {
 .mealToGo .minus {
     grid-area: minusGo;
 }
+
