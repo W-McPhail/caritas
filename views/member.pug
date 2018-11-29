@@ -1,12 +1,15 @@
 extends layout
 block memberScreen
     .mealStay
-        button(type='button', onclick="if(document.getElementById('meals_now').innerText< " + max_meals + "){document.getElementById('meals_now').innerText++;}")
-        button(type='button', onclick="if(document.getElementById('meals_now').innerText>0){document.getElementById('meals_now').innerText--;}")
-        span#meals_now 0
+        button(type='button',class = "minus", onclick="if(document.getElementById('meals_now_stay').innerText>0){document.getElementById('meals_now_stay').innerText--;}") -
+        span(class = "mealNumber")#meals_now_stay #{max_meals_stay_prev}
+        button(type='button',class = "plus", onclick="if(document.getElementById('meals_now_stay').innerText< " + max_meals_stay + "){document.getElementById('meals_now_stay').innerText++;}") +
+        p Today's max meals for staying is #{max_meals_stay}
     .mealToGO
-        button(type='button', onclick="if(document.getElementById('meals_now').innerText< " + max_meals + "){document.getElementById('meals_now').innerText++;}")
-        button(type='button', onclick="if(document.getElementById('meals_now').innerText>0){document.getElementById('meals_now').innerText--;}")
-        span#meals_now 0
+        button(type='button', class = "minus", onclick="if(document.getElementById('meals_now_go').innerText>0){document.getElementById('meals_now_go').innerText--;}") -
+        span(class = "mealNumber")#meals_now_go #{max_meals_go_prev}
+        button(type='button', class = "plus", onclick="if(document.getElementById('meals_now_go').innerText< " + max_meals_go + "){document.getElementById('meals_now_go').innerText++;}") +
+        p Today's max meals for take out is  #{max_meals_go}
+
 
 
