@@ -33,22 +33,19 @@ body {
 }
 
 .loginButton {
-    background-color: steelblue;
+    background-color: blue;
     font-size: 30px;
     padding: 20px;
 
 }
 
-.signIn {
+.loginWrapper {
     background-color: steelblue;
     font-size: 30px;
     padding: 20px;
 }
 
-.login {
-    font-size: 50px;
-    padding: 25px;
-}
+
 .guestScreen {
     display: grid;
     grid-template-areas: " plusGo spanGo minusGo" "plusStay spanStay minusStay";
