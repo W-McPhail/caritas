@@ -1,13 +1,13 @@
 extends layout
 block guest
     .guest
-        form(action='/login', method='post', class='signIn')
+        form(action='/login', method='post')
             input(type="hidden", name="type", value="guest")
             button(type='submit', name="Guest Button", class="loginButton") Guest Login
 block member
     .member
         .login
-            form(action='/login', method='POST', class = "signIn")
+            form(action='/login', method='POST')
                 input(type="hidden", name="type", value="member")
                 input(type = 'text', name = 'id', placeholder= 'Enter ID')
                 button(type='submit', name="Member Login", class="loginButton") Member Login
