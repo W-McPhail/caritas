@@ -1,18 +1,23 @@
-extends layout
-block guest
-    .guest
-        form(action='/login', method='post')
-            input(type="hidden", name="type", value="guest")
-            button(type='submit', name="Guest Button", class="loginButton") Guest Login
-block member
-    .member
-        form(action='/login', method='POST')
-            input(type="hidden", name="type", value="member")
-            input(type = 'text', name = 'id', placeholder= 'Enter ID')
-            button(type='submit', name="Member Login", class="loginButton") Member Login
+doctype html
+html
+    head
+        .welcome
+            title= title
+            link(rel='stylesheet', href='/stylesheets/style.css')
+            h1 Welcome To Caritas Portchester
 
-block language
-    .language
-        h1 Switch Language
+    body
+        .home
+            .guest
+                form(action='/login', method='post')
+                    input(type="hidden", name="type", value="guest")
+                    button(type='submit', name="Guest Button", class="loginButton") Guest Login
+            .member
+                form(action='/login', method='POST')
+                    input(type="hidden", name="type", value="member")
+                    input(type = 'text', name = 'id', placeholder= 'Enter ID')
+                    button(type='submit', name="Member Login", class="loginButton") Member Login
+            .language
+                h1 Switch Language
 
 
