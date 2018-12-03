@@ -6,6 +6,10 @@ html
     body
         .welcome
             h1 Welcome To Caritas Portchester
+            if locals.error
+                h2= error
+
+
         .welcomeScreen
             .loginWrapper
                 block guest
