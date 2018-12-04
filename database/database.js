@@ -9,7 +9,7 @@ MongoClient.connect(url, function (err, db) {
 
 });
 console.log(typeof db);
-module.exports = {addToDb, getAllPeople};
+module.exports = {addToDb, getAllPeople, getPerson};
 
 
 /*
@@ -25,6 +25,7 @@ function addToDb(firstname) {
         console.log("Created new user: " + firstname);
     });
 }
+
 /*
 function addMealsFromGuests(amount) {
     var obj = {time: -1 }; //change to uxix timestamp
@@ -37,6 +38,27 @@ function addMealsFromGuests(amount) {
     Return all items in clients collection.
     MongoDB is async so the CB parameter is a callback function that is called with the result of query as an array of items
  */
+
+/*
+function getFirstUser() {
+    return getUsers().then(function(users) {
+        return users[0].name;
+    }).catch(function(err) {
+        return {
+          name: 'default user'
+        };
+    });
+}
+ */
+async function getPerson(id) {
+    let coll = database.collection('clients');
+    try {
+        return await coll.findOne({identifier: id});
+    } catch (e) {
+        return null;
+    }
+}
+
 function getAllPeople(cb) {
     database.collection("clients").find().toArray(cb);
 }
