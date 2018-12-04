@@ -17,6 +17,7 @@ router.post('/', async function (req, res, next) {
         }
         console.log(profile);
 
+        console.log(profile['identifier']);
 
         //TODO check whether they stayed or went last, fill in the opposite option as 0
         var lastMealsStay = profile['lastMealsStay'];
