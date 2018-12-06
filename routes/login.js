@@ -12,24 +12,39 @@ router.post('/', async function (req, res, next) {
         console.log("Finding: " + memberId);
         const profile = await database.getPerson(memberId); //Get profile from database
         if (profile == null) {
-            res.render("home", {error: "ID '" + memberId + "' not found! 1"});//TODO change
+            res.render("home", {error: "ID '" + memberId + "' not found!"});//TODO change
             return
         }
-        console.log(profile);
+        const mealsState = database.getMealsState();
 
-        console.log(profile['identifier']);
+        const db_max_meals_stay = mealsState['max_meals_stay'];
+        const db_max_meals_go = mealsState['max_meals_stay'];
 
-        //TODO check whether they stayed or went last, fill in the opposite option as 0
-        var lastMealsStay = profile['lastMealsStay'];
+
+        let lastMealsStay = profile['lastMealsStay'];
         if (typeof lastMealsStay === 'undefined')
             lastMealsStay = 0;
-        var lastMealsGo = profile['lastMealsGo'];
-        if (typeof  lastMealsGo === 'undefined')
+        let lastMealsGo = profile['lastMealsGo'];
+        if (typeof lastMealsGo === 'undefined')
             lastMealsGo = 0;
+
+        let tooManyStayLast = false;
+        if (lastMealsStay > db_max_meals_stay) {
+            tooManyStayLast = true;
+            lastMealsStay = db_max_meals_stay;
+        }
+
+
+        let tooManyGoLast = false;
+        if (lastMealsGo > db_max_meals_go) {
+            tooManyGoLast = true;
+            lastMealsGo = db_max_meals_go;
+        }
+
         res.render('member', {
             title: "Member Login",
-            max_meals_stay: 3,
-            max_meals_go: 4,
+            max_meals_stay: db_max_meals_stay,
+            max_meals_go: db_max_meals_go,
             max_meals_stay_prev: lastMealsStay,
             max_meals_go_prev: lastMealsGo
         });

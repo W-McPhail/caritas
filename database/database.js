@@ -5,11 +5,14 @@ var database;
 MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     database = db.db("caritas");
-    console.log("NOT NULL!")
+
+    if (getMealsState() == null) {
+        setMealsState({max_meals_stay: 4, max_meals_go: 3});
+    }
 
 });
 console.log(typeof db);
-module.exports = {addToDb, getAllPeople, getPerson};
+module.exports = {addToDb, getAllPeople, getPerson, getMealsState, setMealsState};
 
 
 /*
@@ -61,6 +64,27 @@ async function getPerson(id) {
 
 function getAllPeople(cb) {
     database.collection("clients").find().toArray(cb);
+}
+
+function setMealsState(state) {
+    let coll = database.collection('state');
+    try {
+        coll.drop();
+        coll.insert(state);
+    } catch (e) {
+        console.log(e);
+    }
+
+}
+
+async function getMealsState() {
+    let coll = database.collection('state');
+    try {
+        return await coll.findOne();
+
+    } catch (e) {
+        return null;
+    }
 }
 
 
