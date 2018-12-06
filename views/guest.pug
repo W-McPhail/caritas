@@ -28,7 +28,6 @@ html
                 .plusButton
                     button(type='button', onclick="if(document.getElementById('meals_now_go').innerText< " + max_meals_go + "){document.getElementById('meals_now_go').innerText++;}") +
             .submit
-                .submitButton
-                    form(action='/submit', method='POST')
-                        input(type="hidden", name="type", value="mealsSubmitted")
-                        button(type='hidden') submit
+                form(action='/submit', method='POST')
+                    input(type="hidden", name="type", value="mealsSubmitted")
+                    button(type='hidden') submit
