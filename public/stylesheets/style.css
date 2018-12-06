@@ -64,23 +64,26 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
 }
-
+.plusButton, .minusButton{
+    /*border-radius: 100px;*/
+    /*border: 2px dimgrey;*/
+    position: relative;
+}
 .plusButton button, .minusButton button {
     width: 100%;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 100px;
     border: 2px dimgrey;
     padding: 20px;
     text-align: center;
     font-size: 100px;
-
-
 }
 .mealCounter{
-    background-color: peachpuff;
-    border-radius: 25px;
-    border: 2px dimgrey;
     position: relative;
+    background-color: peachpuff;
+    border-radius: 100px;
+    width: 100%;
+    height: 100%;
 }
 .mealCounter span{
     display: inline-block;
@@ -92,4 +95,11 @@ body {
     /*top: 20%;*/
     /*left: 40%;*/
     /*font-size: 100px;*/
+}
+.label{
+    position: absolute;
+    left: 27.5%;
+    top: 3%;
+    font-size: 3vw;
+
 }
