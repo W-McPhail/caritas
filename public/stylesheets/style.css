@@ -113,3 +113,10 @@ body {
     text-align: center;
     font-size: 100px;
 }
+
+.mLabel {
+    position: absolute;
+    left: 27.5%;
+    bottom: 3%;
+    font-size: 3vw;
+}
