@@ -1,17 +1,18 @@
 body {
     background-color: #8eabff;
+
 }
 
-.welcomeScreen {
+.welcome {
+    text-align: center;
+}
+
+.home {
     display: grid;
     grid-template-areas: "guest member" "language language";
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     height: 90vh;
-}
-
-.welcome {
-    text-align: center;
 }
 
 .language {
@@ -33,51 +34,62 @@ body {
 }
 
 .loginButton {
-    background-color: steelblue;
+    background-color: blue;
     font-size: 30px;
     padding: 20px;
 
 }
 
-.signIn {
+.loginWrapper {
     background-color: steelblue;
     font-size: 30px;
     padding: 20px;
 }
 
-.login {
-    font-size: 50px;
-    padding: 25px;
-}
 .guestScreen {
     display: grid;
-    grid-template-areas: " plusGo spanGo minusGo" "plusStay spanStay minusStay";
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     height: 90vh;
 }
 
-.mealStay .plus {
-    grid-area: plusStay;
+.mealStay {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
 }
 
-.mealStay .mealNumber {
-    grid-area: spanStay;
+.mealToGO {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
 }
 
-.mealStay .minus {
-    grid-area: minusStay;
-}
+.plusButton button, .minusButton button {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    border: 2px dimgrey;
+    padding: 20px;
+    text-align: center;
+    font-size: 100px;
 
-.mealToGo .plus {
-    grid-area: plusGo;
-}
 
-.mealToGo .mealNumber {
-    grid-area: spanGo;
 }
-
-.mealToGo .minus {
-    grid-area: minusGo;
+.mealCounter{
+    background-color: peachpuff;
+    border-radius: 25px;
+    border: 2px dimgrey;
+    position: relative;
 }
+.mealCounter span{
+    display: inline-block;
+    width: 100%;
 
+    text-align: center;
+    font-size: 35vh;
+    /*position: absolute;*/
+    /*top: 20%;*/
+    /*left: 40%;*/
+    /*font-size: 100px;*/
+}
