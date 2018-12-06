@@ -15,6 +15,7 @@ html
                 .mealCounter
                     label(class="label") Meals To Stay
                     span(class = "mealNumber")#meals_now_stay 0
+                    label(class="mLabel") Max Meals: #{max_meals_stay}
                 .plusButton
                     label(class="label") Add Meal
                     button(type='button', onclick="if(document.getElementById('meals_now_stay').innerText< " + max_meals_stay + "){document.getElementById('meals_now_stay').innerText++;}") +
@@ -25,6 +26,7 @@ html
                 .mealCounter
                     label(class="label") Meals To Go
                     span(class = "mealNumber")#meals_now_go 0
+                    label(class="mLabel") Max Meals: #{max_meals_go}
                 .plusButton
                     button(type='button', onclick="if(document.getElementById('meals_now_go').innerText< " + max_meals_go + "){document.getElementById('meals_now_go').innerText++;}") +
             .submit
