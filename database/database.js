@@ -12,7 +12,7 @@ MongoClient.connect(url, function (err, db) {
 
 });
 console.log(typeof db);
-module.exports = {addToDb, getAllPeople, getPerson, getMealsState, setMealsState};
+module.exports = {addToDb, getAllPeople, getPerson, getMealsState, setMealsState, insertMeals};
 
 
 /*
@@ -75,6 +75,24 @@ function setMealsState(state) {
         console.log(e);
     }
 
+}
+
+/**
+ * Inserts meal track into DB. If both togo and stay are selected, then you need to use two database inserts
+ * @param amount amount of meals being taken
+ * @param memberId ID of member, use -1 for guest
+ * @param togo Whether it is togo
+ */
+function insertMeals(amount, memberId, togo) {
+
+    item = {
+        amount: amount,
+        memberId: memberId,
+        togo: togo,
+        time: new Date().getMilliseconds()
+    };
+
+    database.collection("meals").insert(item);
 }
 
 async function getMealsState() {
