@@ -12,7 +12,7 @@ router.post('/', async function (req, res, next) {
         console.log("Finding: " + memberId);
         const profile = await database.getPerson(memberId); //Get profile from database
         if (profile == null) {
-            res.render("home", {error: "ID '" + memberId + "' not found!"});//TODO change
+            res.render("home", {error: "ID '" + memberId + "' not found!"});
             return
         }
         const mealsState = database.getMealsState();
