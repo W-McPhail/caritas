@@ -12,7 +12,7 @@ MongoClient.connect(url, function (err, db) {
 
 });
 console.log(typeof db);
-module.exports = {addToDb, getAllPeople, getPerson, getMealsState, setMealsState, insertMeals};
+module.exports = {addToDb, getAllPeople, getPerson, getMealsState, setMealsState, insertMeals, updatePerson};
 
 
 /*
@@ -53,6 +53,13 @@ function getFirstUser() {
     });
 }
  */
+
+
+/**
+ * Gets a person by ID
+ * @param id of member
+ * @returns member profile if exists
+ */
 async function getPerson(id) {
     let coll = database.collection('clients');
     try {
@@ -62,10 +69,18 @@ async function getPerson(id) {
     }
 }
 
+/**
+ * Returns all clients
+ * @param cb
+ */
 function getAllPeople(cb) {
     database.collection("clients").find().toArray(cb);
 }
 
+/**
+ * Set current meal state to provided params
+ * @param state
+ */
 function setMealsState(state) {
     let coll = database.collection('state');
     try {
@@ -95,6 +110,9 @@ function insertMeals(amount, memberId, togo) {
     database.collection("meals").insert(item);
 }
 
+/**
+ * @returns current meals state
+ */
 async function getMealsState() {
     let coll = database.collection('state');
     try {
@@ -103,6 +121,17 @@ async function getMealsState() {
     } catch (e) {
         return null;
     }
+}
+
+/**
+ * Updates member profile
+ * @param id ID of person
+ * @param person profile data
+ */
+function updatePerson(id, person) {
+    let coll = database.collection('clients');
+    coll.update({identifier: id}, person, {upsert: true, safe: false});
+
 }
 
 
