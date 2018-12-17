@@ -116,21 +116,7 @@ body {
     text-align: center;
     font-size: 150px;
 }
-/*.mealCounter span{*/
-    /*!*text-align: center;*!*/
-    /*!*font-size: 150px;*!*/
-    /*!*position: absolute;*!*/
-    /*!*top: 20%;*!*/
-    /*!*left: 40%;*!*/
-    /*!*font-size: 100px;*!*/
-/*}*/
-/*.addSubtractLabel{*/
-    /*position: absolute;*/
-    /*left: 35%;*/
-    /*top: 3%;*/
-    /*font-size: 2vw;*/
 
-/*}*/
 .submitButton
 {
     width: 100%;
@@ -144,9 +130,6 @@ body {
 }
 
 .titleLabel {
-    /*position: absolute;*/
-    /*left: 27.5%;*/
-    /*bottom: 3%;*/
     font-size: 4vw;
     font-weight: bold;
 }
@@ -157,33 +140,36 @@ body {
 
 .topContainer{
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(9, 1fr);
 }
 
 .logoLeft {
     display: grid;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
 }
 
 .logoRight {
     display: grid;
-    grid-column-start: 6;
-    grid-column-end: 8;
+    grid-column-start: 7;
+    grid-column-end: 9;
 }
 
 .header{
     display: grid;
-    grid-column-start: 3;
-    grid-column-end: 6;
+    grid-column-start: 4;
+    grid-column-end: 7;
     text-align: center;
     font-size: 2vw;
 }
 
 .mealNumber{
-    position: absolute;
-    top: 5%;
-    left: 30%;
+    /*position: absolute;*/
+    /*top: 5%;*/
+    /*left: 30%;*/
+    /*align-items: center;*/
+    /*display: flex;*/
+    /*vertical-align: middle;*/
 }
 
 .submitForm{
