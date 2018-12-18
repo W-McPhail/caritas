@@ -24,20 +24,39 @@ body {
 .guest {
     grid-area: guest;
     text-align: center;
+    position: relative;
 
 }
 
 .member {
     grid-area: member;
     text-align: center;
+    position: relative
 
 }
 
 .loginButton {
-    background-color: blue;
-    font-size: 30px;
-    padding: 20px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    border: 2px dimgrey;
+    text-align: center;
+    font-size: 100px;
+    border: solid;
+    border-color: slategrey;
+}
 
+.guest .loginButton {
+    position: absolute;
+    top: 40px;
+}
+
+.idlogin {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: blueviolet;
 }
 
 .loginWrapper {
@@ -54,12 +73,24 @@ body {
     height: 90vh;
 }
 
-.mealStay, .mealToGO {
+.mealStay, .mealToGO, .submitDiv {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 5px;
 
+}
+
+.labelContainer{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+
+.minusButton{
+    grid-column-start: 4;
 }
 .plusButton, .minusButton{
     /*border-radius: 100px;*/
@@ -72,7 +103,7 @@ body {
     border-radius: 50px;
     border: 2px dimgrey;
     text-align: center;
-    font-size: 100px;
+    font-size: 150px;
     border: solid;
     border-color: slategrey;
 }
@@ -80,27 +111,12 @@ body {
     position: relative;
     background-color: palevioletred;
     border-radius: 50px;
-
     border: solid;
     border-color: slategrey;
     text-align: center;
     font-size: 150px;
 }
-/*.mealCounter span{*/
-    /*!*text-align: center;*!*/
-    /*!*font-size: 150px;*!*/
-    /*!*position: absolute;*!*/
-    /*!*top: 20%;*!*/
-    /*!*left: 40%;*!*/
-    /*!*font-size: 100px;*!*/
-/*}*/
-.label{
-    position: absolute;
-    left: 35%;
-    top: 3%;
-    font-size: 2vw;
 
-}
 .submitButton
 {
     width: 100%;
@@ -113,9 +129,51 @@ body {
     border-color: slategrey;
 }
 
-.mLabel {
-    position: absolute;
-    left: 27.5%;
-    bottom: 3%;
+.titleLabel {
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.mmLabel {
+    font-size: 3vw;
+}
+
+.topContainer{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.logoLeft {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.logoRight {
+    display: grid;
+    grid-column-start: 7;
+    grid-column-end: 9;
+}
+
+.header{
+    display: grid;
+    grid-column-start: 4;
+    grid-column-end: 7;
+    text-align: center;
     font-size: 2vw;
+}
+
+.mealNumber{
+    /*position: absolute;*/
+    /*top: 5%;*/
+    /*left: 30%;*/
+    /*align-items: center;*/
+    /*display: flex;*/
+    /*vertical-align: middle;*/
+}
+
+.submitForm{
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 7;
 }
