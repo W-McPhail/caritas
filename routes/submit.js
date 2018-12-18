@@ -27,7 +27,7 @@ router.post('/', function (req, res, next) {
         let person = database.getPerson(memberID);
         person['lastMealsStay'] = meals_stay;
         person["lastMealsGo"] = meals_go;
-        database.updatePerson(memberID,person);
+        database.updatePerson(memberID, person);
     }
     //TODO confirmation page
 
