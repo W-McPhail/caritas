@@ -1,11 +1,16 @@
 doctype html
 html
     head
-        .welcome
-            title= title
-            link(rel='stylesheet', href='/stylesheets/style.css')
-            h1 Welcome To Caritas Portchester
-            h2= error
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        h2=error
+        .topContainer
+            .logoLeft
+                img(id="logo", src="http://static1.squarespace.com/static/572e5d2d20c647909acbd7af/t/57e4688537c5811bc0675544/1543515204318/?format=1500w", width="100%", height="100%")
+            .header
+                h1 Welcome To Caritas Port Chester
+            .logoRight
+                img(id="logo", src="http://static1.squarespace.com/static/572e5d2d20c647909acbd7af/t/57e4688537c5811bc0675544/1543515204318/?format=1500w", width="100%", height="100%")
     body
         .home
             .guest
