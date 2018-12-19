@@ -4,13 +4,14 @@ html
         .welcome
             title= title
             link(rel='stylesheet', href='/stylesheets/style.css')
+            script(type="text/javascript" src="/js/fontend.js")
         .topContainer
             .logoLeft
                 img(id="logo", src="http://static1.squarespace.com/static/572e5d2d20c647909acbd7af/t/57e4688537c5811bc0675544/1543515204318/?format=1500w", width="100%", height="100%")
             .header
                 h1 Welcome To Caritas Port Chester
             .logoRight
-                img(id="logo", src="http://static1.squarespace.com/static/572e5d2d20c647909acbd7af/t/57e4688537c5811bc0675544/1543515204318/?format=1500w", width="100%", height="100%")
+                img(id="logo_2", src="http://static1.squarespace.com/static/572e5d2d20c647909acbd7af/t/57e4688537c5811bc0675544/1543515204318/?format=1500w", width="100%", height="100%")
 
 
     body
@@ -42,6 +43,8 @@ html
                 .plusButton
                     button(type='button', onclick="if(document.getElementById('meals_now_go').innerText< " + max_meals_go + "){document.getElementById('meals_now_go').innerText++;}") +
             .submitDiv
-                form(action='/submit', method='POST', class='submitForm')
-                    input(type="hidden", name="type", value="mealsSubmitted")
-                    button(type='hidden', class="submitButton") Submit
+                form(action='/submit', method='POST', class='submitForm' onsubmit="guestSubmit()")
+                    input(type="hidden", name="type", value="guest")
+                    input(type="hidden", name="meals_now_stay", id="meals_now_stay_input")
+                    input(type="hidden", name="meals_now _go", id="meals_now_go_input")
+                    button(type='submit', class="submitButton") Submit
