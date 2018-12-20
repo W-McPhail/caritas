@@ -1,19 +1,19 @@
 doctype html
-html
+html(lang="en")
     head
         .welcome
             title= title
             link(rel='stylesheet', href='/stylesheets/style.css')
-            H1 Guest Login
+            h1(class="guestHeader") Guest Login
 
     body
         .guestScreen
             .mealStay
                 .labelContainer
                     .titleLabel
-                        label() Meals To Stay
+                        p(class="pForAccess") Meals To Stay
                     .mmLabel
-                        label() Today's Limit: #{max_meals_stay}
+                        p(class="pForAccess") Today's Limit: #{max_meals_stay}
                 .minusButton
                     //label(class="addSubtractLabel") Subtract Meal
                     button(type='button', onclick="if(document.getElementById('meals_now_stay').innerText>0){document.getElementById('meals_now_stay').innerText--;}") -
@@ -25,9 +25,9 @@ html
             .mealToGO
                 .labelContainer
                     .titleLabel
-                        label(class="label") Meals To Go
+                        p(class="pForAccess") Meals To Go
                     .mmLabel
-                        label(class="mLabel") Today's Limit: #{max_meals_go}
+                        p(class="pForAccess") Today's Limit: #{max_meals_go}
                 .minusButton
                     button(type='button', onclick="if(document.getElementById('meals_now_go').innerText>0){document.getElementById('meals_now_go').innerText--;}") -
                 .mealCounter

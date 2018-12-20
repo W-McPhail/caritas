@@ -1,6 +1,5 @@
 body {
     background-color: #91cefd;
-
 }
 
 .welcome {
@@ -18,7 +17,6 @@ body {
 .language {
     grid-area: language;
     text-align: center;
-
 }
 
 .guest {
@@ -65,7 +63,7 @@ body {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-row-gap: 10px;
-    height: 90vh;
+    height: 30vh;
 }
 
 .mealStay, .mealToGO, .submitDiv {
@@ -171,4 +169,16 @@ body {
     display: grid;
     grid-column-start: 2;
     grid-column-end: 7;
+}
+
+.guestHeader{
+    text-align: center;
+    font-size: 6vw;
+    padding: 0;
+    margin: 0;
+}
+
+.pForAccess{
+    margin: 0;
+    padding: 0;
 }
