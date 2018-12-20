@@ -13,7 +13,7 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 
 
-var submit = require('./routes/login');
+var submit = require('./routes/submit');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
