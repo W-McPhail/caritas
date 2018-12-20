@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-//var test = require(".././database/database");
 var database = require("../database/database");
 
 router.post('/', async function (req, res, next) {

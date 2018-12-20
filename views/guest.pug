@@ -4,6 +4,7 @@ html(lang="en")
         .welcome
             title= title
             link(rel='stylesheet', href='/stylesheets/style.css')
+            script(type="text/javascript" src="/js/fontend.js")
             h1(class="guestHeader") Guest Login
 
     body
@@ -35,6 +36,8 @@ html(lang="en")
                 .plusButton
                     button(type='button', onclick="if(document.getElementById('meals_now_go').innerText< " + max_meals_go + "){document.getElementById('meals_now_go').innerText++;}") +
             .submitDiv
-                form(action='/submit', method='POST', class='submitForm')
-                    input(type="hidden", name="type", value="mealsSubmitted")
-                    button(type='hidden', class="submitButton") Submit
+                form(action='/submit', method='POST', class='submitForm' onsubmit="guestSubmit()")
+                    input(type="hidden", name="type", value="guest")
+                    input(type="hidden", name="meals_now_stay", id="meals_now_stay_input")
+                    input(type="hidden", name="meals_now _go", id="meals_now_go_input")
+                    button(type='submit', class="submitButton") Submit
