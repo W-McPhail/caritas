@@ -33,7 +33,7 @@ router.post('/', function (req, res, next) {
     let name = guest ? "Guest" : memberID;
     res.render("confirm",{person_name: name, meals_stay: meals_stay, meals_go: meals_go});
     //TODO confirmation page
-
+    render
 
 
 });

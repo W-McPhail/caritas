@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        .welcome
+            title= title
+            link(rel='stylesheet', href='/stylesheets/style.css')
+            h1 Confirmed Order
+
+    body
+        .confirm
+            h2 Thank you #{person_name}
+            p You submitted #{meals_stay} meals to stay and #{meals_go} meals to go!
+        .returnHome
+            a(href="/")
+                button(type="button",class = "homeButton")
+
