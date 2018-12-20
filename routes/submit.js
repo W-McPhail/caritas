@@ -30,7 +30,7 @@ router.post('/', function (req, res, next) {
         database.updatePerson(memberID, person);
     }
     //TODO confirmation page
-
+    render
 
 });
 
