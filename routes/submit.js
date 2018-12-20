@@ -22,7 +22,7 @@ router.post('/', function (req, res, next) {
     if (meals_stay !== 0)
         database.insertMeals(meals_stay, guest ? -1 : memberID, false);
     if (meals_go !== 0)
-        database.insertMeals(meals_go, guest ? -1 : memberID, false);
+        database.insertMeals(meals_go, guest ? -1 : memberID, true);
     let name = guest ? "Guest" : "An error occurred while loading your information";
     if (!guest) {
         let person = database.getPerson(memberID);
