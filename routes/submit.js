@@ -30,8 +30,10 @@ router.post('/', function (req, res, next) {
         person["lastMealsGo"] = meals_go;
         database.updatePerson(memberID, person);
     }
-    res.render('home', {error: "Success!"});
+    let name = guest ? "Guest" : memberID;
+    res.render("confirm",{person_name: name, meals_stay: meals_stay, meals_go: meals_go});
     //TODO confirmation page
+
 
 
 });
