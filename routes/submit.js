@@ -23,19 +23,16 @@ router.post('/', function (req, res, next) {
         database.insertMeals(meals_stay, guest ? -1 : memberID, false);
     if (meals_go !== 0)
         database.insertMeals(meals_go, guest ? -1 : memberID, false);
-
+    let name = guest ? "Guest" : "An error occurred while loading your information";
     if (!guest) {
         let person = database.getPerson(memberID);
         person['lastMealsStay'] = meals_stay;
         person["lastMealsGo"] = meals_go;
         database.updatePerson(memberID, person);
+        name = person["identifier"];
     }
-    let name = guest ? "Guest" : memberID;
-    res.render("confirm",{person_name: name, meals_stay: meals_stay, meals_go: meals_go});
-    //TODO confirmation page
-    render
 
-
+    res.render("confirm", {person_name: name, meals_stay: meals_stay, meals_go: meals_go});
 });
 
 module.exports = router;
