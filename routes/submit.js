@@ -4,11 +4,12 @@ var router = express.Router();
 var database = require(".././database/database");
 /* GET home page. */
 router.post('/', function (req, res, next) {
-    let guest = res.body['guest'];
-    let meals_stay = res.body['meals_now_stay'];
-    let meals_go = res.body['meals_now _go'];
-    let memberID = res.body['memberId'];
+    let guest = req.body['type'] === "guest";
+    let meals_stay = req.body['meals_now_stay'];
+    let meals_go = req.body['meals_now _go'];
+    let memberID = req.body['memberId'];
 
+    console.log("processing: isGuest: " + guest + " meals_stay: " + meals_stay + " meals_go: " + meals_go + " memberID: " + memberID);
     const mealsState = database.getMealsState();
 
     const db_max_meals_stay = mealsState['max_meals_stay'];
@@ -21,17 +22,17 @@ router.post('/', function (req, res, next) {
     if (meals_stay !== 0)
         database.insertMeals(meals_stay, guest ? -1 : memberID, false);
     if (meals_go !== 0)
-        database.insertMeals(meals_go, guest ? -1 : memberID, false);
-
+        database.insertMeals(meals_go, guest ? -1 : memberID, true);
+    let name = guest ? "Guest" : "An error occurred while loading your information";
     if (!guest) {
         let person = database.getPerson(memberID);
         person['lastMealsStay'] = meals_stay;
         person["lastMealsGo"] = meals_go;
         database.updatePerson(memberID, person);
+        name = person["identifier"];
     }
-    //TODO confirmation page
 
-
+    res.render("confirm", {person_name: name, meals_stay: meals_stay, meals_go: meals_go});
 });
 
 module.exports = router;
