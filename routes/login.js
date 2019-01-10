@@ -45,8 +45,8 @@ router.post('/', async function (req, res, next) {
             title: "Member Login",
             max_meals_stay: db_max_meals_stay,
             max_meals_go: db_max_meals_go,
-            max_meals_stay_prev: lastMealsStay,
-            max_meals_go_prev: lastMealsGo,
+            meals_stay_prev: lastMealsStay,
+            meals_go_prev: lastMealsGo,
             extra_info: extra_info
         });
     }

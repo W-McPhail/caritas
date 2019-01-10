@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        .welcome
+            title= title
+            link(rel='stylesheet', href='/stylesheets/style.css')
+            h1 Welcome To Caritas Portchester
+
+    body
+        form(action='/create', method="post")
+            input(type="text", name="identifier", placeholder="Enter identifier")
+            input(type="text", name="extra_info", placeholder="Extra info")
+            button(type="submit")
+
+
