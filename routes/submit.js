@@ -19,6 +19,8 @@ router.post('/', function (req, res, next) {
         res.render("home", {error: "Meals provided is higher than allowed!"});
         return;
     }
+
+
     if (meals_stay !== 0)
         database.insertMeals(meals_stay, guest ? -1 : memberID, false);
     if (meals_go !== 0)
