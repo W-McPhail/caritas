@@ -45,13 +45,22 @@ body {
     font-size: 100px;
     border: solid;
     border-color: slategrey;
+    font-family: Georgia
 }
 
 .idlogin {
     position: relative;
-    width: 100%;
-    height: 50px;
-    background-color: blueviolet;
+    width: 95%;
+    height: 60px;
+    background-color: white;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 35px;
+}
+
+input{
+    font-size: 35px;
 }
 
 .loginWrapper {
@@ -140,22 +149,22 @@ body {
 
 .logoLeft {
     display: grid;
-    grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .logoRight {
     display: grid;
-    grid-column-start: 7;
-    grid-column-end: 9;
+    grid-column-start: 8;
+    grid-column-end: 10;
 }
 
 .header{
     display: grid;
-    grid-column-start: 4;
-    grid-column-end: 7;
+    grid-column-start: 3;
+    grid-column-end: 8;
     text-align: center;
-    font-size: 2vw;
+    font-size: 3vw;
 }
 
 .mealNumber{
