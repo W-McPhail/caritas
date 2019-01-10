@@ -12,7 +12,7 @@ body {
     grid-template-areas: "guest member" "language language";
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    height: 90vh;
+    /*height: 50vh;*/
 }
 
 .language {
@@ -144,25 +144,32 @@ input{
 
 .topContainer{
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .logoLeft {
-    display: grid;
+    display: block;
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 2;
+    /*margin-left: center;
+    margin-right: center;*/
+
 }
 
 .logoRight {
-    display: grid;
-    grid-column-start: 8;
-    grid-column-end: 10;
+    display: block;
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+img{
+    padding-left: 17px;
+
 }
 
 .header{
     display: grid;
-    grid-column-start: 3;
-    grid-column-end: 8;
+    grid-column-start: 2;
+    grid-column-end: 5;
     text-align: center;
     font-size: 3vw;
 }
