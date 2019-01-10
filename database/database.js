@@ -20,12 +20,12 @@ module.exports = {addToDb, getAllPeople, getPerson, getMealsState, setMealsState
 
     identifier = name
  */
-function addToDb(firstname) {
-    var myobj = {identifier: firstname};
+function addToDb(doc) {
+    var myobj = doc;
     var clientCollection = database.collection("clients");
     clientCollection.insertOne(myobj, function (err, res) {
         if (err) throw err;
-        console.log("Created new user: " + firstname);
+        console.log("Created new user: " + myobj['identifier'] + doc);
     });
 }
 

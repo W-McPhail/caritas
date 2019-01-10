@@ -9,10 +9,10 @@ body {
 
 .home {
     display: grid;
-    grid-template-areas: "guest member" "language language";
+    grid-template-areas: "guest member" "guest member" "language language";
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    /*height: 50vh;*/
+    grid-template-rows: repeat(3, 1fr);
+    height: 80vh;
 }
 
 .language {
@@ -151,9 +151,6 @@ input{
     display: block;
     grid-column-start: 1;
     grid-column-end: 2;
-    /*margin-left: center;
-    margin-right: center;*/
-
 }
 
 .logoRight {
@@ -162,16 +159,15 @@ input{
     grid-column-end: 6;
 }
 img{
-    padding-left: 17px;
-
+    padding-left:17px;
 }
+
 
 .header{
     display: grid;
     grid-column-start: 2;
     grid-column-end: 5;
-    text-align: center;
-    font-size: 3vw;
+    font-size: 2.9vw;
 }
 
 .mealNumber{

@@ -1,21 +1,27 @@
 doctype html
 html
     head
-        .welcome
-            title= title
-            link(rel='stylesheet', href='/stylesheets/style.css')
-            h1 Welcome To Caritas Portchester
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        p=error
+        .topContainer
+            .logoLeft
+                img(id="logo", src="http://static1.squarespace.com/static/572e5d2d20c647909acbd7af/t/57e4688537c5811bc0675544/1543515204318/?format=1500w", width="100%", height="100%", alt="Cartias Logo")
+            .memberheader
+                h1 Member
+            .logoRight
+                img(id="logo", src="http://static1.squarespace.com/static/572e5d2d20c647909acbd7af/t/57e4688537c5811bc0675544/1543515204318/?format=1500w", width="100%", height="100%", alt="Caritas Logo")
 
     body
         .memberScreen
             .mealStay
                 button(type='button',class = "minus", onclick="if(document.getElementById('meals_now_stay').innerText>0){document.getElementById('meals_now_stay').innerText--;}") -
-                span(class = "mealNumber")#meals_now_stay #{max_meals_stay_prev}
+                span(class = "mealNumber")#meals_now_stay #{meals_stay_prev}
                 button(type='button',class = "plus", onclick="if(document.getElementById('meals_now_stay').innerText< " + max_meals_stay + "){document.getElementById('meals_now_stay').innerText++;}") +
                 p Today's max meals for staying is #{max_meals_stay}
             .mealToGO
                 button(type='button', class = "minus", onclick="if(document.getElementById('meals_now_go').innerText>0){document.getElementById('meals_now_go').innerText--;}") -
-                span(class = "mealNumber")#meals_now_go #{max_meals_go_prev}
+                span(class = "mealNumber")#meals_now_go #{meals_go_prev}
                 button(type='button', class = "plus", onclick="if(document.getElementById('meals_now_go').innerText< " + max_meals_go + "){document.getElementById('meals_now_go').innerText++;}") +
                 p Today's max meals for take out is  #{max_meals_go}
 

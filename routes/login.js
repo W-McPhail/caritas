@@ -21,6 +21,7 @@ router.post('/', async function (req, res, next) {
 
 
         let lastMealsStay = profile['lastMealsStay'];
+        let extra_info = profile['extra'];
         if (typeof lastMealsStay === 'undefined')
             lastMealsStay = 0;
         let lastMealsGo = profile['lastMealsGo'];
@@ -44,8 +45,9 @@ router.post('/', async function (req, res, next) {
             title: "Member Login",
             max_meals_stay: db_max_meals_stay,
             max_meals_go: db_max_meals_go,
-            max_meals_stay_prev: lastMealsStay,
-            max_meals_go_prev: lastMealsGo
+            meals_stay_prev: lastMealsStay,
+            meals_go_prev: lastMealsGo,
+            extra_info: extra_info
         });
     }
     else if (type === ("guest")) {
