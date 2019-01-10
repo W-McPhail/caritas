@@ -24,6 +24,8 @@ html
                 span(class = "mealNumber")#meals_now_go #{meals_go_prev}
                 button(type='button', class = "plus", onclick="if(document.getElementById('meals_now_go').innerText< " + max_meals_go + "){document.getElementById('meals_now_go').innerText++;}") +
                 p Today's max meals for take out is  #{max_meals_go}
+            textarea #{extra_info}
+
 
 
 
