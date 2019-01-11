@@ -1,30 +1,51 @@
 doctype html
-html
+html(lang="en")
     head
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
         p=error
         .topContainer
             .logoLeft
-                img(id="logo", src="http://static1.squarespace.com/static/572e5d2d20c647909acbd7af/t/57e4688537c5811bc0675544/1543515204318/?format=1500w", width="100%", height="100%", alt="Cartias Logo")
-            .memberheader
+                img(id="logo", src="http://static1.squarespace.com/static/572e5d2d20c647909acbd7af/t/57e4688537c5811bc0675544/1543515204318/?format=1500w", width="80%", height="100%", alt="Cartias Logo")
+            .header
                 h1 Member
             .logoRight
-                img(id="logo", src="http://static1.squarespace.com/static/572e5d2d20c647909acbd7af/t/57e4688537c5811bc0675544/1543515204318/?format=1500w", width="100%", height="100%", alt="Caritas Logo")
+                img(id="logo1", src="http://static1.squarespace.com/static/572e5d2d20c647909acbd7af/t/57e4688537c5811bc0675544/1543515204318/?format=1500w", width="80%", height="100%", alt="Caritas Logo")
 
     body
         .memberScreen
             .mealStay
-                button(type='button',class = "minus", onclick="if(document.getElementById('meals_now_stay').innerText>0){document.getElementById('meals_now_stay').innerText--;}") -
-                span(class = "mealNumber")#meals_now_stay #{meals_stay_prev}
-                button(type='button',class = "plus", onclick="if(document.getElementById('meals_now_stay').innerText< " + max_meals_stay + "){document.getElementById('meals_now_stay').innerText++;}") +
-                p Today's max meals for staying is #{max_meals_stay}
+                .labelContainer
+                    .titleLabel
+                        p(class="pForAccess") Meals To Stay
+                    .mmLabel
+                        p(class="pForAccess") Today's limit: #{max_meals_stay}
+                .minusButton
+                    button(type='button',class = "minus", onclick="if(document.getElementById('meals_now_stay').innerText>0){document.getElementById('meals_now_stay').innerText--;}") -
+                .mealCounter
+                    span(class = "mealNumber")#meals_now_stay #{meals_stay_prev}
+                .plusButton
+                    button(type='button',class = "plus", onclick="if(document.getElementById('meals_now_stay').innerText< " + max_meals_stay + "){document.getElementById('meals_now_stay').innerText++;}") +
             .mealToGO
-                button(type='button', class = "minus", onclick="if(document.getElementById('meals_now_go').innerText>0){document.getElementById('meals_now_go').innerText--;}") -
-                span(class = "mealNumber")#meals_now_go #{meals_go_prev}
-                button(type='button', class = "plus", onclick="if(document.getElementById('meals_now_go').innerText< " + max_meals_go + "){document.getElementById('meals_now_go').innerText++;}") +
-                p Today's max meals for take out is  #{max_meals_go}
-            textarea #{extra_info}
+                .labelContainer
+                    .titleLabel
+                        p(class="pForAccess") Meals To Go
+                    .mmLabel
+                        p(class="pForAccess") Today's limit:  #{max_meals_go}
+                .minusButton
+                    button(type='button', class = "minus", onclick="if(document.getElementById('meals_now_go').innerText>0){document.getElementById('meals_now_go').innerText--;}") -
+                .mealCounter
+                    span(class = "mealNumber")#meals_now_go #{meals_go_prev}
+                .plusButton
+                    button(type='button', class = "plus", onclick="if(document.getElementById('meals_now_go').innerText< " + max_meals_go + "){document.getElementById('meals_now_go').innerText++;}") +
+            .submitDiv
+                form(action='/submit', method='POST', class='submitForm' onsubmit="guestSubmit()")
+                    input(type="hidden", name="type", value="guest")
+                    input(type="hidden", name="meals_now_stay", id="meals_now_stay_input")
+                    input(type="hidden", name="meals_now _go", id="meals_now_go_input")
+                    button(type='submit', class="submitButton") Submit
+            .additionalInfo
+                textarea #{extra_info}
 
 
 

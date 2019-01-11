@@ -21,12 +21,10 @@ html(lang="en")
                     .mmLabel
                         p(class="pForAccess") Today's Limit: #{max_meals_stay}
                 .minusButton
-                    //label(class="addSubtractLabel") Subtract Meal
                     button(type='button', onclick="if(document.getElementById('meals_now_stay').innerText>0){document.getElementById('meals_now_stay').innerText--;}") -
                 .mealCounter
                     span(class = "mealNumber")#meals_now_stay 0
                 .plusButton
-                    //label(class="addSubtractLabel") Add Meal
                     button(type='button', onclick="if(document.getElementById('meals_now_stay').innerText< " + max_meals_stay + "){document.getElementById('meals_now_stay').innerText++;}") +
             .mealToGO
                 .labelContainer
