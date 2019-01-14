@@ -29,7 +29,6 @@ app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/submit', submit);
 app.use("/create", create);
-app.use("/language",language);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
