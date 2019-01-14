@@ -23,23 +23,35 @@ body {
 }
 
 .guest {
-    display: grid;
     position: relative;
     grid-area: guest;
+    display: grid;
 
 }
 
 .member {
+    display: grid;
     grid-area: member;
-    text-align: center;
     position: relative
 
 }
 
-.loginButton {
+.guestLoginButton {
     position: relative;
     width: 100%;
-    height: 83%;
+    height: 100%;
+    border-radius: 50px;
+    border: 2px dimgrey;
+    text-align: center;
+    font-size: 100px;
+    border: solid;
+    border-color: slategrey;
+    font-family: Palatino Linotype;
+}
+.memberLoginButton{
+    position: relative;
+    width: 100%;
+    height: 50%;
     border-radius: 50px;
     border: 2px dimgrey;
     text-align: center;
@@ -49,11 +61,16 @@ body {
     font-family: Palatino Linotype;
 }
 
+
 .idlogin {
     position: relative;
-    width: 95%;
-    height: 120px;
+    width: 100%;
+    height: 50%;
     background-color: white;
+    border-radius: 50px;
+    border: 2px dimgrey;
+    border: solid;
+    border-color: slategrey;
 }
 
 input::-webkit-input-placeholder {
