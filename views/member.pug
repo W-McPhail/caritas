@@ -4,6 +4,8 @@ html
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
         p=error
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script(src="/js/frontend.js")
         .topContainer
             .logoLeft
                 img(id="logo_left", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
@@ -17,9 +19,9 @@ html
             .mealStay
                 .labelContainer
                     .titleLabel
-                        p(class="pForAccess") Meals To Stay
+                        p(class="pForAccess" id="meals_to_stay") %phrase%
                     .mmLabel
-                        p(class="pForAccess") Today's limit: #{max_meals_stay}
+                        p(class="pForAccess" id="today_limit") %phrase%: #{max_meals_stay}
                 .minusButton
                     button(type='button',class = "minus", onclick="if(document.getElementById('meals_now_stay').innerText>0){document.getElementById('meals_now_stay').innerText--;}") -
                 .mealCounter
