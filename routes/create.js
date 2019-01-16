@@ -4,7 +4,7 @@ var router = express.Router();
 var database = require(".././database/database");
 /* GET home page. */
 router.get('/', async function (req, res, next) {
-    res.render('create');
+    res.render('newaccount');
 });
 
 router.post('/', async function (req, res, next) {
