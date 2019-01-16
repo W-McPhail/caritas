@@ -14,18 +14,23 @@ html(lang="en")
 
     body
         .home
-            .guest
-                form(action='/login', method='post')
+            form(action='/login', method='POST')
+                .guest
                     input(type="hidden", name="type", value="guest")
-                    button(type='submit', name="Guest Button", class="guestLoginButton") Guest Login
-            .member
-                //label
-                form(action='/login', method='POST')
-                    input(type="hidden", name="type", value="member")
-                    input(type = 'text', name = 'id', placeholder= '  Enter Member ID', class="idlogin")
-                    button(type='submit', name="Member Login", class="memberLoginButton") Enter
+                    .loginButton
+                        button(type='submit', name="Guest Button") Guest Login
+            form(action='/login', method='POST')
+                .member
+                    //labelinput(type="hidden", name="type", value="member")
+                    .memberID
+                        input(type = 'text', name = 'id', placeholder= '  Enter Member ID', class="idlogin")
+                    .loginButton
+                        button(type='submit', name="Member Login") Enter
             .language
                 //button(type='submit', name="Switch Language") Switch Language
                 h1 Switch Language
-
+            .newAccount
+                form(action='/create', method='POST')
+                    .loginButton
+                        button(type='submit', name="New Account", class="guestLoginButton") Create New Account
 
