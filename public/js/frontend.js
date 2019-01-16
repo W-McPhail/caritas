@@ -5,10 +5,7 @@ function guestSubmit() {
 
 
 function refreshLanguage() {
-    let cookie = getCookie("lang");
-    if (typeof cookie === "undefined") {
-        cookie = "en";
-    }
+    let cookie = getCurrentLanguage();
     let id = cookie === "en" ? 0 : 1;
     let previd = -1;
     $.ajax({
@@ -30,6 +27,32 @@ function refreshLanguage() {
     });
 
 
+}
+
+function getCurrentLanguage() {
+    let cookie = getCookie("lang");
+    if (typeof cookie === "undefined") {
+        cookie = "en";
+    }
+    return cookie;
+}
+
+function swapLanguage() {
+    let isEng = getCurrentLanguage() === "en";
+    let target = isEng ? "sp" : "en";
+    setLanguageCookie("lang", target, 7);
+    refreshLanguage();
+}
+
+
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
 function getCookie(name) {
