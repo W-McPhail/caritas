@@ -26,8 +26,6 @@ function refreshLanguage() {
                         console.log("Applying language " + k + " -> " + jsonElementElement);
                     }
             }
-
-
         }
     });
 
