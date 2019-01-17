@@ -3,11 +3,12 @@ function guestSubmit() {
     document.getElementById("meals_now_go_input").value = document.getElementById("meals_now_go").innerHTML;
 }
 
+let previous = null;
 
 function refreshLanguage() {
     let cookie = getCurrentLanguage();
     let id = cookie === "en" ? 0 : 1;
-    let previd = -1;
+    let previd = previous == null ? -1 : previous;
     $.ajax({
         dataType: "json",
         url: "http://localhost:3000/lang/language.json",
@@ -19,8 +20,10 @@ function refreshLanguage() {
                 if (element != null)
                     if (!(typeof element === "undefined")) {
                         let jsonElementElement = response[k][id];
-                        element.innerHTML = element.innerText.replace(previd === -1 ? "%phrase%" : response[previd][id], jsonElementElement);
-                        console.log("Applying language " + k + " -> " + jsonElementElement);
+                        console.log("prev: " + previous + " previd: " + previd);
+                        let searchValue = previd === -1 ? "%phrase%" : response[k][previd];
+                        element.innerHTML = element.innerText.replace(searchValue, jsonElementElement);
+                        console.log("Applying language " + k + " -> " + jsonElementElement+" (" +searchValue+")");
                     }
             }
         }
@@ -39,13 +42,15 @@ function getCurrentLanguage() {
 
 function swapLanguage() {
     let isEng = getCurrentLanguage() === "en";
+    previous = isEng ? 0 : 1;
     let target = isEng ? "sp" : "en";
-    setLanguageCookie("lang", target, 7);
+    setCookie("lang", target, 7);
     refreshLanguage();
 }
 
 
 function setCookie(name, value, days) {
+    console.log("Setting " + name + " to " + value);
     let expires = "";
     if (days) {
         let date = new Date();
