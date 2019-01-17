@@ -19,13 +19,13 @@ html(lang="en")
             .guest
                 form(action='/login', method='post')
                     input(type="hidden", name="type", value="guest")
-                    button(type='submit', name="Guest Button", class="loginButton") Guest Login
+                    button(type='submit', name="Guest Button", class="loginButton", id="guest_login") %phrase%
             .member
                 label
                     form(action='/login', method='POST')
                         input(type="hidden", name="type", value="member")
-                        input(type = 'text', name = 'id', placeholder= '  Enter Member ID', class="idlogin")
-                        button(type='submit', name="Member Login", class="loginButton") Enter
+                        input(type = 'text', name = 'id', placeholder= 'Enter Member ID', class="idlogin")
+                        button(type='submit', name="Member Login", class="loginButton" id="member_login") %phrase%
 
 include footer
 
