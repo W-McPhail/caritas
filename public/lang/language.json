@@ -1,0 +1,30 @@
+{
+  "meals_to_stay": [
+    "Meals To Stay",
+    "Sp Meals To Stay"
+  ],
+  "todays_limit": [
+    "Today's Limit (s)",
+    "Sp Today's Limit (s)"
+  ],
+  "todays_limit_go": [
+    "Today's Limit (s)",
+    "Sp Today's Limit (s)"
+  ],
+  "guest_login": [
+    "Guest Login",
+    "Sp Guest Login"
+  ],
+  "member_login": [
+    "Enter",
+    "Sp Enter"
+  ],
+  "meals_to_go": [
+    "Meals To Go",
+    "Sp Meals To Go"
+  ],
+  "form_submit": [
+    "Submit",
+    "Sp Submit"
+  ]
+}
