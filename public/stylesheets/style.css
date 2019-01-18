@@ -9,45 +9,85 @@ body {
 
 .home {
     display: grid;
-    grid-template-areas: "guest member" "newAccount member";
+    grid-template-areas: "guest member" "newAccount newAccount";
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    height: 65vh;
+    height: 55vh;
+    grid-row-gap: 10px;
+
+
 }
 .newAccount{
     grid-area: newAccount;
 }
 .language {
+    grid-area: switchLanguage;
     text-align: center;
     font-family: Palatino Linotype;
 
 }
-
 .guest {
     position: relative;
     grid-area: guest;
     display: grid;
-
 }
-
+.newAccount {
+    display: grid;
+}
 .member {
-    /*display: grid;*/
-    /*grid-template-columns: repeat(5,1fr);*/
-    /*grid-area: member;*/
+    grid-area: member;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(0,1fr);
+    grid-template-areas: "ID ID ID login ";
     /*position: relative*/
 }
-
-.memberLoginButton{
-
-    height: 100%;
-    width: 100%;
+.memberID{
+    grid-area: ID;
+}
+.memberLoginButon{
+    grid-area: login;
 
 }
-.loginButton button{
+.memberLoginButton button{
+    width: 100%;
+    height: 98%;
+    font-size: 6vw;
+    border-radius: 22px;
+    border: 2px dimgrey;
+    text-align: center;
+    border-color: slategrey;
+    font-family: Palatino Linotype;
+
+}
+.newLoginButton, .guestLoginButton{
+    width: 100%;
+    height:100%
+}
+.newLoginButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+.newLoginButton button{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    border-radius: 22px;
+    border: 2px dimgrey;
+    text-align: center;
+    font-size: 7vw;
+    border: solid;
+    border-color: slategrey;
+    font-family: Palatino Linotype;
+
+}
+.guestLoginButton button{
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 50px;
+    border-radius: 22px;
     border: 2px dimgrey;
     text-align: center;
     font-size: 7vw;
@@ -55,48 +95,28 @@ body {
     border-color: slategrey;
     font-family: Palatino Linotype;
 }
-/*.guestLoginButton button {*/
-    /*display: grid;*/
-    /*position: relative;*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*border-radius: 50px;*/
-    /*border: 2px dimgrey;*/
-    /*text-align: center;*/
-    /*font-size: 7vw;*/
-    /*border: solid;*/
-    /*border-color: slategrey;*/
-    /*font-family: Palatino Linotype;*/
-/*}*/
-
-
-
 .idlogin {
     position: relative;
-    width: 100%;
-    height: 50%;
+    width: 98%;
+    height: 96%;
     background-color: white;
-    border-radius: 50px;
+    border-radius: 22px;
     border: 2px dimgrey;
     border: solid;
     border-color: slategrey;
 }
-
 input::-webkit-input-placeholder {
-    font-size: 60px;
+    font-size:8vw;
     font-family: Palatino Linotype;
 }
-
 input{
-    font-size: 35px;
+    font-size: 8vw;
 }
-
 .loginWrapper {
     background-color: steelblue;
     font-size: 30px;
     padding: 20px;
 }
-
 .guestScreen {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -111,8 +131,6 @@ input{
     grid-row-gap: 10px;
     height: 65vh;
 }
-
-
 .mealStay, .mealToGO, .submitDiv {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -120,15 +138,12 @@ input{
     grid-column-gap: 5px;
 
 }
-
 .labelContainer{
     grid-column-start: 2;
     grid-column-end: 4;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
 }
-
-
 .minusButton{
     grid-column-start: 4;
 }
@@ -140,7 +155,7 @@ input{
 .plusButton button, .minusButton button {
     width: 100%;
     height: 100%;
-    border-radius: 50px;
+    border-radius: 22px;
     border: 2px dimgrey;
     text-align: center;
     font-size: 118px;
@@ -150,46 +165,39 @@ input{
 .mealCounter{
     position: relative;
     background-color: palevioletred;
-    border-radius: 50px;
+    border-radius: 22px;
     border: solid;
     border-color: slategrey;
     text-align: center;
     font-size:  118px;
 }
-
-.submitButton
-{
+.submitButton {
     width: 100%;
     height: 100%;
-    border-radius: 50px;
+    border-radius: 22px;
     border: 2px dimgrey;
     text-align: center;
     font-size: 100px;
     border: solid;
     border-color: slategrey;
 }
-
 .titleLabel {
     font-size: 4vw;
     font-weight: bold;
 }
-
 .mmLabel {
     font-size: 3vw;
 }
-
 .topContainer{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     height: 27vh;
 }
-
 .logoLeft {
     display: block;
     grid-column-start: 1;
     grid-column-end: 2;
 }
-
 .logoRight {
     display: block;
     grid-column-start: 5;
@@ -198,8 +206,6 @@ input{
 img{
     padding-left:17px;
 }
-
-
 .header{
     display: grid;
     grid-column-start: 2;
@@ -208,7 +214,6 @@ img{
     font-size: 2.7vw;
     font-family: Palatino Linotype;
 }
-
 .mealNumber{
     /*position: absolute;*/
     /*top: 5%;*/
@@ -217,20 +222,17 @@ img{
     /*display: flex;*/
     /*vertical-align: middle;*/
 }
-
 .submitForm{
     display: grid;
     grid-column-start: 2;
     grid-column-end: 7;
 }
-
 .guestHeader{
     text-align: center;
     font-size: 6vw;
     padding: 0;
     margin: 0;
 }
-
 .pForAccess{
     margin: 0;
     padding: 0;
