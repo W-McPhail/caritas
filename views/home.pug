@@ -29,7 +29,7 @@ html(lang="en")
                     .memberLoginButton
                         button(type='submit', name="Member Login", class="loginButton" id="member_login") %phrase%
             .newAccount
-                form(action='/create', method='POST')
+                a(href='/create')
                     .newLoginButton
                         button(type='submit', name="New Account", class="guestLoginButton") Create New Account
 
