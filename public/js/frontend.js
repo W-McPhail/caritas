@@ -22,8 +22,13 @@ function refreshLanguage() {
                         let jsonElementElement = response[k][id];
                         console.log("prev: " + previous + " previd: " + previd);
                         let searchValue = previd === -1 ? "%phrase%" : response[k][previd];
-                        element.innerHTML = element.innerText.replace(searchValue, jsonElementElement);
-                        console.log("Applying language " + k + " -> " + jsonElementElement+" (" +searchValue+")");
+                        if (element.placeholder != null) {
+                            element.placeholder = element.placeholder.replace(searchValue, jsonElementElement);
+                        } else {
+                            element.innerHTML = element.innerText.replace(searchValue, jsonElementElement);
+                        }
+
+                        console.log("Applying language " + k + " -> " + jsonElementElement + " (" + searchValue + ")");
                     }
             }
         }

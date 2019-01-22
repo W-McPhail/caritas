@@ -26,5 +26,13 @@
   "form_submit": [
     "Submit",
     "Sp Submit"
+  ],
+  "enter_id": [
+    "Enter ID",
+    "SP Enter ID"
+  ],
+  "create_new_account": [
+    "Create New Account",
+    "SP Create New Account"
   ]
 }

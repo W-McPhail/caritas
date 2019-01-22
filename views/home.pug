@@ -25,12 +25,12 @@ html(lang="en")
                 .member
                     input(type="hidden", name="type", value="member")
                     .memberID
-                        input(type = 'text', name = 'id', placeholder= '  Enter ID', class="idlogin")
+                        input(type = 'text', name = 'id', placeholder= '%phrase%', class="idlogin" id="enter_id")
                     .memberLoginButton
                         button(type='submit', name="Member Login", class="loginButton" id="member_login") %phrase%
             .newAccount
                 a(href='/create')
                     .newLoginButton
-                        button(type='submit', name="New Account", class="guestLoginButton") Create New Account
+                        button(type='submit', name="New Account", class="guestLoginButton" id="create_new_account") %phrase%
 
 include footer
