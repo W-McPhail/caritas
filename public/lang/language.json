@@ -1,31 +1,31 @@
 {
   "meals_to_stay": [
     "Meals To Stay",
-    "Sp Meals To Stay"
+    "Para Quedarse"
   ],
   "todays_limit": [
     "Today's Limit (s)",
-    "Sp Today's Limit (s)"
+    "Límite de hoy"
   ],
   "todays_limit_go": [
     "Today's Limit (s)",
-    "Sp Today's Limit (s)"
+    "Límite de hoy"
   ],
   "guest_login": [
     "Guest Login",
-    "Sp Guest Login"
+    "Acceso Visitante"
   ],
   "member_login": [
     "Enter",
-    "Sp Enter"
+    "Ir"
   ],
   "meals_to_go": [
     "Meals To Go",
-    "Sp Meals To Go"
+    "Para ir"
   ],
   "form_submit": [
     "Submit",
-    "Sp Submit"
+    "Enviar"
   ],
   "enter_id": [
     "Enter ID",
