@@ -2,11 +2,12 @@ var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://127.0.0.1:27017/";
 console.log("Starting db");
 var database;
-MongoClient.connect(url, function (err, db) {
+MongoClient.connect(url, async function (err, db) {
     if (err) throw err;
     database = db.db("caritas");
 
-    if (getMealsState() == null) {
+    let mealsState = await getMealsState();
+    if (mealsState == null || (typeof mealsState['max_meals_stay'] === "undefined")) {
         setMealsState({max_meals_stay: 4, max_meals_go: 3});
     }
 
@@ -85,7 +86,7 @@ function setMealsState(state) {
     let coll = database.collection('state');
     try {
         coll.drop();
-        coll.insert(state);
+        coll.insertOne(state);
     } catch (e) {
         console.log(e);
     }
@@ -117,7 +118,6 @@ async function getMealsState() {
     let coll = database.collection('state');
     try {
         return await coll.findOne();
-
     } catch (e) {
         return null;
     }

@@ -3,6 +3,8 @@ html(lang="en")
     head
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script(src="/js/frontend.js")
         p=error
         .topContainer
             .logoLeft
@@ -17,14 +19,15 @@ html(lang="en")
             .guest
                 form(action='/login', method='post')
                     input(type="hidden", name="type", value="guest")
-                    button(type='submit', name="Guest Button", class="loginButton") Guest Login
+                    button(type='submit', name="Guest Button", class="loginButton", id="guest_login") %phrase%
             .member
                 label
                     form(action='/login', method='POST')
                         input(type="hidden", name="type", value="member")
-                        input(type = 'text', name = 'id', placeholder= '  Enter Member ID', class="idlogin")
-                        button(type='submit', name="Member Login", class="loginButton") Enter
-            .language
-                h1 Switch Language
+                        input(type = 'text', name = 'id', placeholder= 'Enter Member ID', class="idlogin")
+                        button(type='submit', name="Member Login", class="loginButton" id="member_login") %phrase%
+
+include footer
+
 
 

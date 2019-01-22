@@ -14,10 +14,10 @@ router.post('/', async function (req, res, next) {
             res.render("home", {error: "ID '" + memberId + "' not found!"});
             return
         }
-        const mealsState = database.getMealsState();
+        const mealsState = await database.getMealsState();
 
         const db_max_meals_stay = mealsState['max_meals_stay'];
-        const db_max_meals_go = mealsState['max_meals_stay'];
+        const db_max_meals_go = mealsState['max_meals_go'];
 
 
         let lastMealsStay = profile['lastMealsStay'];
@@ -41,14 +41,16 @@ router.post('/', async function (req, res, next) {
             lastMealsGo = db_max_meals_go;
         }
 
-        res.render('member', {
+        let options = {
             title: "Member Login",
             max_meals_stay: db_max_meals_stay,
             max_meals_go: db_max_meals_go,
             meals_stay_prev: lastMealsStay,
             meals_go_prev: lastMealsGo,
             extra_info: extra_info
-        });
+        };
+        console.log(options);
+        res.render('member', options);
     }
     else if (type === ("guest")) {
         res.render('guest', {title: "Guest Login", max_meals_stay: 3, max_meals_go: 4});
