@@ -21,13 +21,16 @@ body {
     grid-area: newAccount;
     display: grid;
 }
-.newAccount button{
-text-decoration: none;
+.newAccount a{
+    text-decoration: none;
 }
+.newAccount a:visited{color: black;}
+
 .language {
     grid-area: switchLanguage;
     text-align: center;
     font-family: Palatino Linotype;
+    position: relative; bottom: 0;
 
 }
 .guest {
@@ -69,12 +72,6 @@ text-decoration: none;
     height:100%
 }
 .newLoginButton{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 50px;
-}
-.newLoginButton button{
     position: relative;
     width: 50%;
     height: 100%;
@@ -84,9 +81,10 @@ text-decoration: none;
     font-size: 7vw;
     border: solid;
     border-color: slategrey;
+    background-color: white;
     font-family: Palatino Linotype;
-
 }
+
 .guestLoginButton button{
     position: relative;
     width: 100%;
@@ -266,7 +264,7 @@ img{
 
 .switch {
     position: relative;
-    display: inline-block;
+    display: inline;
     width: 60px;
     height: 34px;
 }
@@ -280,10 +278,10 @@ img{
 .slider {
     position: absolute;
     cursor: pointer;
-    top: 0;
+    top: -4px;
     left: 0;
-    right: 0;
-    bottom: 0;
+    right: -5px;
+    bottom: -6px;
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
@@ -295,7 +293,7 @@ img{
     height: 26px;
     width: 26px;
     left: 4px;
-    bottom: 4px;
+    bottom: 3px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
