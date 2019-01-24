@@ -5,11 +5,11 @@
   ],
   "todays_limit": [
     "Today's Limit (s)",
-    "Límite de hoy"
+    "Límite de Hoy"
   ],
   "todays_limit_go": [
     "Today's Limit (s)",
-    "Límite de hoy"
+    "Límite de Hoy"
   ],
   "guest_login": [
     "Guest Login",
@@ -17,7 +17,7 @@
   ],
   "member_login": [
     "Enter",
-    "Ir"
+    "Va"
   ],
   "meals_to_go": [
     "Meals To Go",
@@ -25,14 +25,14 @@
   ],
   "form_submit": [
     "Submit",
-    "Enviar"
+    "Envia"
   ],
   "enter_id": [
     "Enter ID",
-    "SP Enter ID"
+    "Ingresa su ID"
   ],
   "create_new_account": [
     "Create New Account",
-    "SP Create New Account"
+    "Crea Una Cuenta Nueva"
   ]
 }
