@@ -74,8 +74,8 @@ async function getPerson(id) {
  * Returns all clients
  * @param cb
  */
-function getAllPeople(cb) {
-    database.collection("clients").find().toArray(cb);
+async function getAllPeople(cb) {
+    return database.collection("clients").find();
 }
 
 /**
@@ -131,7 +131,38 @@ async function getMealsState() {
 function updatePerson(id, person) {
     let coll = database.collection('clients');
     coll.update({identifier: id}, person, {upsert: true, safe: false});
+}
 
+
+async function getMealsWithin(one, two) {
+    let coll = database.collection("meals");
+    try {
+        return await coll.find({time: {"$gte": one, "$lte": two}});
+
+    } catch (e) {
+        return null;
+    }
+}
+
+function updateAdmin(id, person) {
+    let coll = database.collection('admin');
+    coll.update({id: id}, person, {upsert: true, safe: false});
+}
+
+function createAdmin(id, person) {
+    if (getAdminAccount(id) != null || getAdminAccount(id)['identifier'] != null) {
+        return "Error";
+    }
+    database.collection("admin").insert(person);
+}
+
+async function getAdminAccount(id) {
+    let coll = database.collection("admin");
+    try {
+        return await coll.findOne({id: id});
+    } catch (e) {
+        return null;
+    }
 }
 
 
