@@ -103,11 +103,11 @@ body {
 
 .vl {
     border-left: 4px solid black;
-    height: 400px;
+    height: 55vh;
     position: absolute;
     left: 50%;
     margin-left: -3px;
-    top: 160px;
+    top: 30vh;
 }
 
 .idlogin {
@@ -196,10 +196,7 @@ input{
     border: solid;
     border-color: slategrey;
 }
-.titleLabel {
-    font-size: 4vw;
-    font-weight: bold;
-}
+
 .mmLabel {
     font-size: 3vw;
 }
@@ -226,8 +223,12 @@ img{
     grid-column-start: 2;
     grid-column-end: 5;
     text-align:center;
-    font-size: 2.7vw;
+}
+.header h1{
     font-family: Palatino Linotype;
+    font-weight: bold;
+    font-size: 5.7vw;
+
 }
 .mealNumber{
     /*position: absolute;*/
