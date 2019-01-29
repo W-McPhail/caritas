@@ -24,6 +24,9 @@ body {
 .newAccount a{
     text-decoration: none;
 }
+
+.newAccount a{color: black;}
+
 .newAccount a:visited{color: black;}
 
 .language {
