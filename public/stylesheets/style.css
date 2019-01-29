@@ -13,7 +13,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     height: 55vh;
-    grid-row-gap: 10px;
+    grid-column-gap: 10px;
 
 
 }
@@ -24,7 +24,7 @@ body {
 .newAccount button{
 text-decoration: none;
 }
-.language {
+.languageSwitch {
     grid-area: switchLanguage;
     text-align: center;
     font-family: Palatino Linotype;
@@ -292,8 +292,8 @@ img{
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 7vw;
+    width: 7vw;
     left: 4px;
     bottom: 4px;
     background-color: white;
