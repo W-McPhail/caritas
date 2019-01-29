@@ -9,29 +9,31 @@ body {
 
 .home {
     display: grid;
-    grid-template-areas: "guest member" "newAccount newAccount";
+    grid-template-areas: "guest member" "Spanish newAccount";
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     height: 55vh;
-    grid-column-gap: 10px;
-
+    grid-row-gap: 10px;
+    grid-column-gap: 30px;
 
 }
 .newAccount{
     grid-area: newAccount;
     display: grid;
 }
-.newAccount button{
-text-decoration: none;
+.newAccount a{
+    text-decoration: none;
 }
-.languageSwitch {
+.newAccount a:visited{color: black;}
+
+.language {
     grid-area: switchLanguage;
     text-align: center;
     font-family: Palatino Linotype;
+    position: relative; bottom: 0;
 
 }
 .guest {
-    position: relative;
     grid-area: guest;
     display: grid;
 }
@@ -43,13 +45,12 @@ text-decoration: none;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(0,1fr);
-    grid-template-areas: "ID ID ID login ";
-    /*position: relative*/
+    grid-template-areas: "ID ID ID login";
 }
 .memberID{
     grid-area: ID;
 }
-.memberLoginButon{
+.memberLoginButton{
     grid-area: login;
 
 }
@@ -68,15 +69,14 @@ text-decoration: none;
     width: 100%;
     height:100%
 }
-.newLoginButton{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 50px;
+
+.newAccount{
+    display: grid;
+    grid-template-area: "newAccount";
 }
-.newLoginButton button{
-    position: relative;
-    width: 50%;
+
+.newAccount{
+    width: 100%
     height: 100%;
     border-radius: 22px;
     border: 2px dimgrey;
@@ -84,9 +84,10 @@ text-decoration: none;
     font-size: 7vw;
     border: solid;
     border-color: slategrey;
+    background-color: white;
     font-family: Palatino Linotype;
-
 }
+
 .guestLoginButton button{
     position: relative;
     width: 100%;
@@ -99,6 +100,16 @@ text-decoration: none;
     border-color: slategrey;
     font-family: Palatino Linotype;
 }
+
+.vl {
+    border-left: 4px solid black;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 160px;
+}
+
 .idlogin {
     position: relative;
     width: 98%;
@@ -266,7 +277,7 @@ img{
 
 .switch {
     position: relative;
-    display: inline-block;
+    display: inline;
     width: 60px;
     height: 34px;
 }
@@ -280,10 +291,10 @@ img{
 .slider {
     position: absolute;
     cursor: pointer;
-    top: 0;
+    top: -4px;
     left: 0;
-    right: 0;
-    bottom: 0;
+    right: -5px;
+    bottom: -6px;
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
@@ -292,10 +303,10 @@ img{
 .slider:before {
     position: absolute;
     content: "";
-    height: 7vw;
-    width: 7vw;
+    height: 26px;
+    width: 26px;
     left: 4px;
-    bottom: 4px;
+    bottom: 3px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
