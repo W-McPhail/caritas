@@ -9,63 +9,55 @@ body {
 
 .home {
     display: grid;
-    grid-template-areas: "guest member" "newAccount newAccount";
+    grid-template-areas: "guest member" "Spanish newAccount";
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     height: 55vh;
     grid-row-gap: 10px;
+    grid-column-gap: 30px;
 
 }
-
-.newAccount {
+.newAccount{
     grid-area: newAccount;
     display: grid;
 }
-
-.newAccount a {
+.newAccount a{
     text-decoration: none;
 }
 
-.newAccount a:visited {
-    color: black;
-}
+.newAccount a{color: black;}
+
+.newAccount a:visited{color: black;}
 
 .language {
     grid-area: switchLanguage;
     text-align: center;
     font-family: Palatino Linotype;
-    position: relative;
-    bottom: 0;
+    position: relative; bottom: 0;
 
 }
-
 .guest {
-    position: relative;
     grid-area: guest;
     display: grid;
 }
 
 .member {
     height: 100%;
-    width: 100%;
+    width:100%;
     grid-area: member;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(0, 1fr);
-    grid-template-areas: "ID ID ID login ";
-    /*position: relative*/
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(0,1fr);
+    grid-template-areas: "ID ID ID login";
 }
-
-.memberID {
+.memberID{
     grid-area: ID;
 }
-
-.memberLoginButon {
+.memberLoginButton{
     grid-area: login;
 
 }
-
-.memberLoginButton button {
+.memberLoginButton button{
     width: 100%;
     height: 98%;
     font-size: 6vw;
@@ -76,15 +68,18 @@ body {
     font-family: Palatino Linotype;
 
 }
-
-.newLoginButton, .guestLoginButton {
+.newLoginButton, .guestLoginButton{
     width: 100%;
-    height: 100%
+    height:100%
 }
 
-.newLoginButton {
-    position: relative;
-    width: 50%;
+.newAccount{
+    display: grid;
+    grid-template-area: "newAccount";
+}
+
+.newAccount{
+    width: 100%
     height: 100%;
     border-radius: 22px;
     border: 2px dimgrey;
@@ -96,7 +91,7 @@ body {
     font-family: Palatino Linotype;
 }
 
-.guestLoginButton button {
+.guestLoginButton button{
     position: relative;
     width: 100%;
     height: 100%;
@@ -107,6 +102,15 @@ body {
     border: solid;
     border-color: slategrey;
     font-family: Palatino Linotype;
+}
+
+.vl {
+    border-left: 4px solid black;
+    height: 55vh;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 30vh;
 }
 
 .idlogin {
@@ -120,29 +124,36 @@ body {
     border-color: slategrey;
 }
 
-input::-webkit-input-placeholder {
-    font-size: 8vw;
+#enter_id{
+    font-size:6vw;
     font-family: Palatino Linotype;
 }
 
-input {
-    font-size: 8vw;
+#add_info{
+    font-size:3.5vw;
+    font-family: Palatino Linotype;
 }
+
+/*input::-webkit-input-placeholder {
+    font-size:6vw;
+    font-family: Palatino Linotype;
+}
+input{
+    font-size: 6vw;
+}*/
 
 .loginWrapper {
     background-color: steelblue;
     font-size: 30px;
     padding: 20px;
 }
-
 .guestScreen {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-row-gap: 10px;
-    height: 65vh;
+    height: 50vh;
 }
-
 .memberScreen {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -150,7 +161,6 @@ input {
     grid-row-gap: 10px;
     height: 65vh;
 }
-
 .mealStay, .mealToGO, .submitDiv {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -158,24 +168,21 @@ input {
     grid-column-gap: 5px;
 
 }
-
-.labelContainer {
+.labelContainer{
     grid-column-start: 2;
     grid-column-end: 4;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
 }
-
-.minusButton {
+.minusButton{
     grid-column-start: 4;
-}
 
-.plusButton, .minusButton {
+}
+.plusButton, .minusButton{
     /*border-radius: 100px;*/
     /*border: 2px dimgrey;*/
     position: relative;
 }
-
 .plusButton button, .minusButton button {
     width: 100%;
     height: 100%;
@@ -186,17 +193,15 @@ input {
     border: solid;
     border-color: slategrey;
 }
-
-.mealCounter {
+.mealCounter{
     position: relative;
     background-color: palevioletred;
     border-radius: 22px;
     border: solid;
     border-color: slategrey;
     text-align: center;
-    font-size: 118px;
+    font-size:  118px;
 }
-
 .submitButton {
     width: 100%;
     height: 100%;
@@ -206,49 +211,44 @@ input {
     font-size: 100px;
     border: solid;
     border-color: slategrey;
-}
+    font-family: Palatino Linotype;
 
-.titleLabel {
-    font-size: 4vw;
-    font-weight: bold;
 }
 
 .mmLabel {
     font-size: 3vw;
 }
-
-.topContainer {
+.topContainer{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     height: 27vh;
 }
-
 .logoLeft {
     display: block;
     grid-column-start: 1;
     grid-column-end: 2;
 }
-
 .logoRight {
     display: block;
     grid-column-start: 5;
     grid-column-end: 6;
 }
-
-img {
-    padding-left: 17px;
+img{
+    padding-left:17px;
 }
-
-.header {
+.header{
     display: grid;
     grid-column-start: 2;
     grid-column-end: 5;
-    text-align: center;
-    font-size: 2.7vw;
-    font-family: Palatino Linotype;
+    text-align:center;
 }
+.header h1{
+    font-family: Palatino Linotype;
+    font-weight: bold;
+    font-size: 5.7vw;
 
-.mealNumber {
+}
+.mealNumber{
     /*position: absolute;*/
     /*top: 5%;*/
     /*left: 30%;*/
@@ -256,39 +256,35 @@ img {
     /*display: flex;*/
     /*vertical-align: middle;*/
 }
-
-.submitForm {
+.submitForm{
     display: grid;
     grid-column-start: 2;
     grid-column-end: 7;
-}
 
-.guestHeader {
+}
+.guestHeader{
     text-align: center;
     font-size: 6vw;
     padding: 0;
     margin: 0;
 }
-
-.pForAccess {
+.pForAccess{
     margin: 0;
     padding: 0;
+    font-size: 3vw;
 }
-
-.confirmPage {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
+.confirmPage{
+    display:grid;
+    grid-template-rows: repeat(3,1fr);
     height: 60vh;
 }
-
-.confirmPage p {
+.confirmPage p{
     text-align: center;
     font-size: 50px;
     margin: 0;
 
 }
-
-.returnHome button {
+.returnHome button{
     height: 100%;
     width: 100%;
     border-radius: 50px;
@@ -298,6 +294,7 @@ img {
     border-color: slategrey;
     font-size: 70px;
 }
+
 
 .switch {
     position: relative;
@@ -341,7 +338,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 0px #2196F3;
 }
 
 input:checked + .slider:before {
@@ -359,15 +356,6 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-.admin {
+.newaccountpage{
     text-align: center;
-    font-size: 2vh;
-}
-
-.admin h2 {
-    font-size: 2.3vw;
-}
-.adder {
-    padding-left: 10px;
-    padding-right: 10px;
 }
