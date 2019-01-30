@@ -338,7 +338,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 0px #2196F3;
 }
 
 input:checked + .slider:before {
@@ -358,4 +358,17 @@ input:checked + .slider:before {
 
 .newaccountpage{
     text-align: center;
+}
+
+.admin {
+    text-align: center;
+    font-size: 2vh;
+}
+
+.admin h2 {
+    font-size: 2.3vw;
+}
+.adder {
+    padding-left: 10px;
+    padding-right: 10px;
 }
