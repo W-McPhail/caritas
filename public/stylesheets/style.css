@@ -123,13 +123,25 @@ body {
     border: solid;
     border-color: slategrey;
 }
-input::-webkit-input-placeholder {
-    font-size:8vw;
+
+#enter_id{
+    font-size:6vw;
+    font-family: Palatino Linotype;
+}
+
+#add_info{
+    font-size:3.5vw;
+    font-family: Palatino Linotype;
+}
+
+/*input::-webkit-input-placeholder {
+    font-size:6vw;
     font-family: Palatino Linotype;
 }
 input{
-    font-size: 8vw;
-}
+    font-size: 6vw;
+}*/
+
 .loginWrapper {
     background-color: steelblue;
     font-size: 30px;
@@ -320,7 +332,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 0px #2196F3;
+    box-shadow: 0 0 1px #2196F3;
 }
 
 input:checked + .slider:before {
@@ -336,4 +348,8 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+.newaccountpage{
+    text-align: center;
 }
