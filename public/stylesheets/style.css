@@ -359,3 +359,16 @@ input:checked + .slider:before {
 .newaccountpage{
     text-align: center;
 }
+
+.admin {
+    text-align: center;
+    font-size: 2vh;
+}
+
+.admin h2 {
+    font-size: 2.3vw;
+}
+.adder {
+    padding-left: 10px;
+    padding-right: 10px;
+}
