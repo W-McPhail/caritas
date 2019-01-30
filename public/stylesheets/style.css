@@ -24,6 +24,9 @@ body {
 .newAccount a{
     text-decoration: none;
 }
+
+.newAccount a{color: black;}
+
 .newAccount a:visited{color: black;}
 
 .language {
@@ -120,13 +123,25 @@ body {
     border: solid;
     border-color: slategrey;
 }
-input::-webkit-input-placeholder {
-    font-size:8vw;
+
+#enter_id{
+    font-size:6vw;
+    font-family: Palatino Linotype;
+}
+
+#add_info{
+    font-size:3.5vw;
+    font-family: Palatino Linotype;
+}
+
+/*input::-webkit-input-placeholder {
+    font-size:6vw;
     font-family: Palatino Linotype;
 }
 input{
-    font-size: 8vw;
-}
+    font-size: 6vw;
+}*/
+
 .loginWrapper {
     background-color: steelblue;
     font-size: 30px;
@@ -339,4 +354,8 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+.newaccountpage{
+    text-align: center;
 }
