@@ -9,12 +9,12 @@ body {
 
 .home {
     display: grid;
-    grid-template-areas: "guest member" "newAccount newAccount";
+    grid-template-areas: "guest member" "Spanish newAccount";
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     height: 55vh;
     grid-row-gap: 10px;
-
+    grid-column-gap: 30px;
 
 }
 .newAccount{
@@ -24,6 +24,9 @@ body {
 .newAccount a{
     text-decoration: none;
 }
+
+.newAccount a{color: black;}
+
 .newAccount a:visited{color: black;}
 
 .language {
@@ -34,7 +37,6 @@ body {
 
 }
 .guest {
-    position: relative;
     grid-area: guest;
     display: grid;
 }
@@ -46,13 +48,12 @@ body {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(0,1fr);
-    grid-template-areas: "ID ID ID login ";
-    /*position: relative*/
+    grid-template-areas: "ID ID ID login";
 }
 .memberID{
     grid-area: ID;
 }
-.memberLoginButon{
+.memberLoginButton{
     grid-area: login;
 
 }
@@ -71,9 +72,14 @@ body {
     width: 100%;
     height:100%
 }
-.newLoginButton{
-    position: relative;
-    width: 50%;
+
+.newAccount{
+    display: grid;
+    grid-template-area: "newAccount";
+}
+
+.newAccount{
+    width: 100%
     height: 100%;
     border-radius: 22px;
     border: 2px dimgrey;
@@ -97,6 +103,16 @@ body {
     border-color: slategrey;
     font-family: Palatino Linotype;
 }
+
+.vl {
+    border-left: 4px solid black;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 160px;
+}
+
 .idlogin {
     position: relative;
     width: 98%;
@@ -107,13 +123,25 @@ body {
     border: solid;
     border-color: slategrey;
 }
-input::-webkit-input-placeholder {
-    font-size:8vw;
+
+#enter_id{
+    font-size:6vw;
+    font-family: Palatino Linotype;
+}
+
+#add_info{
+    font-size:3.5vw;
+    font-family: Palatino Linotype;
+}
+
+/*input::-webkit-input-placeholder {
+    font-size:6vw;
     font-family: Palatino Linotype;
 }
 input{
-    font-size: 8vw;
-}
+    font-size: 6vw;
+}*/
+
 .loginWrapper {
     background-color: steelblue;
     font-size: 30px;
@@ -320,4 +348,8 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+.newaccountpage{
+    text-align: center;
 }
