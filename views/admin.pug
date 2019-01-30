@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script(src="/js/frontend.js")
+        p=error
+        .topContainer
+            .logoLeft
+                img(id="logo_left", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
+            .header
+                h1 Caritas of Port Chester
+            .logoRight
+                img(id="logo_right", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
+
+    body
+        .vl
+        .admin
+            h2 Current Meal Status
+            p Meals To Stay
+                span(onclick="if(document.getElementById('meals_to_stay').innerText>0){document.getElementById('meals_to_stay').innerText--;}" class="adxder") -
+                span(id="meals_to_stay") #{meals_stay}
+                span(onclick="if(document.getElementById('meals_to_stay').innerText>0){document.getElementById('meals_to_stay').innerText++;}" class="adder") +
+            p Meals To Go
+                span(onclick="if(document.getElementById('meals_to_go').innerText>0){document.getElementById('meals_to_go').innerText--;}" class="adder") -
+                span(id="meals_to_go") #{meals_go}
+                span(onclick="if(document.getElementById('meals_to_go').innerText>0){document.getElementById('meals_to_go').innerText++;}" class="adder") +
