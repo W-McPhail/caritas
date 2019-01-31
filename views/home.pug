@@ -30,6 +30,10 @@ html(lang="en")
                     .memberLoginButton
                         button(type='submit', name="Member Login", class="loginButton" id="member_login") %phrase%
             .newAccount
-                a(href='/create', id="create_new_account") %phrase%
+                .newLoginButton
+                    a(href='/create', id="create_new_account") %phrase%
+
+
+
 
 include footer
