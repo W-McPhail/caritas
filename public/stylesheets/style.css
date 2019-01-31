@@ -321,9 +321,9 @@ img{
 .slider {
     position: absolute;
     cursor: pointer;
-    top: -7px;
+    top: -8px;
     left: -25px;
-    right: -30px;
+    right: -29px;
     bottom: -6px;
     background-color: #ccc;
     -webkit-transition: .4s;
