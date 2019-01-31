@@ -14,16 +14,12 @@ html(lang="en")
 
     body
         .newAccountPage
-            .enterID
-                form(action='/createAccount', method='POST')
-                    input(type="hidden", name="type", value="account")
-                    input(type = 'text', name = 'id', placeholder= '  Enter Member ID', class="idlogin")
-            .additionalInfo
-                form(action='/createAccount', method='POST')
-                    input(type="hidden", name="type", value="account")
+            form(action='/create', method='POST')
+                .enterID
+                    input(type='text', name='identifier', placeholder= 'Enter Member ID', class="idlogin")
+                .additionalInfo
                     //input(type = 'text', name = 'id', placeholder= '  Enter Additional Information (allergies, family size, etc.)', class="newaccount")
-                    textarea(type = 'text', name = 'id', placeholder= '  Enter Additional Information (allergies, family size, etc.)', class="idlogin", id="add_info", cols="40" rows="4")
-            .goButton
-                button(type='submit', name="Create Account", class="newAccount") Create Account
-            p hello world here
+                    textarea(name='extra_info', placeholder= 'Enter Additional Information (allergies, family size, etc.)', class="idlogin", id="add_info", cols="40" rows="4")
+                .goButton
+                    button(type='submit', name="Create Account", class="newAccount") Create Account
 
