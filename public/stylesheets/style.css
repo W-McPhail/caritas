@@ -65,7 +65,8 @@ body {
     height: 98%;
     font-size: 6vw;
     border-radius: 22px;
-    border: 2px dimgrey;
+    border-width: 2px;
+    border-color: dimgrey;
     text-align: center;
     border-color: slategrey;
     font-family: Palatino Linotype;
@@ -82,7 +83,7 @@ body {
 }
 
 .newAccount{
-    width: 100%
+    width: 100%;
     height: 100%;
     border-radius: 22px;
     border: 2px dimgrey;
@@ -347,7 +348,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 0px #2196F3;
+    box-shadow: 0 0 0 #2196F3;
 }
 
 input:checked + .slider:before {
