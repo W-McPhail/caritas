@@ -12,7 +12,7 @@ router.post('/', async function (req, res, next) {
     let extra_info = req.body['extra_info'];
     database.addToDb({identifier: identifier, extra: extra_info});
 
-    const mealsState = database.getMealsState();
+    const mealsState = await database.getMealsState();
 
     const db_max_meals_stay = mealsState['max_meals_stay'];
     const db_max_meals_go = mealsState['max_meals_stay'];
