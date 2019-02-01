@@ -3,12 +3,14 @@ html(lang="en")
     head
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script(src="/js/frontend.js")
         p=error
         .topContainer
             .logoLeft
                 img(id="logo_left", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
             .header
-                h1 New Account
+                h1(id="new_account_header") %phrase%
             .logoRight
                 img(id="logo_right", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
 
@@ -16,10 +18,11 @@ html(lang="en")
         .newAccountPage
             form(action='/create', method='POST')
                 .enterID
-                    input(type='text', name='identifier', placeholder= 'Enter Member ID', class="idlogin")
+                    input(type='text', name='identifier', placeholder= '%phrase%', class="idlogin", id="enter_new_id")
                 .additionalInfo
                     //input(type = 'text', name = 'id', placeholder= '  Enter Additional Information (allergies, family size, etc.)', class="newaccount")
-                    textarea(name='extra_info', placeholder= 'Enter Additional Information (allergies, family size, etc.)', class="idlogin", id="add_info", cols="40" rows="4")
+                    textarea(name='extra_info', placeholder= '%phrase%', class="idlogin", id="additional_info", cols="40" rows="4")
                 .goButton
-                    button(type='submit', name="Create Account", class="newAccount") Create Account
+                    button(type='submit', name="Create_Account", placeholder='%phrase%', class="createNewAccount", id="create_account") %phrase%
 
+include footer
