@@ -9,9 +9,10 @@ html
             h1 Confirmed Order
 
     body
+
         .confirmPage
             p Thank you #{person_name}
-            p You submitted #{meals_stay} meals to stay and #{meals_go} meals to go!
+            p You submitted #{meals_stay} meal#{meals_stay != 1 ? "s" : ""} to stay and #{meals_go} meal#{meals_go != 1 ? "s" : ""} to go!
             .returnHome
                 a(href="/")
                     button(type="button",class = "homeButton") Start Over
