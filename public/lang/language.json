@@ -1,14 +1,22 @@
 {
+  "guest_header": [
+    "Guest",
+    "Visita"
+  ],
+  "home_header": [
+  "Caritas of Port Chester",
+  "Caritas de Port Chester"
+  ],
   "meals_to_stay": [
     "Meals To Stay",
     "Para Quedarse"
   ],
   "todays_limit": [
-    "Today's Limit (s)",
+    "Today's Limit",
     "Límite de Hoy"
   ],
   "todays_limit_go": [
-    "Today's Limit (s)",
+    "Today's Limit",
     "Límite de Hoy"
   ],
   "guest_login": [
@@ -33,6 +41,6 @@
   ],
   "create_new_account": [
     "Create New Account",
-    "Crea Una Cuenta Nueva"
+    "Crea una Cuenta Nueva"
   ]
 }
