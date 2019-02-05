@@ -10,6 +10,13 @@ router.get('/', async function (req, res, next) {
 router.post('/', async function (req, res, next) {
     let identifier = req.body['identifier'];
     let extra_info = req.body['extra_info'];
+    let person = await database.getPerson(identifier);
+    if(person['identifier'] === identifier) {
+        res.write("Id Taken");
+        res.end();
+
+        return
+    }
     database.addToDb({identifier: identifier, extra: extra_info});
 
     const mealsState = await database.getMealsState();
