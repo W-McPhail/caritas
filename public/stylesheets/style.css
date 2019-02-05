@@ -83,12 +83,24 @@ body {
 }
 
 .newAccount{
+     width: 100%;
+     height: 100%;
+     border-radius: 22px;
+     border: 2px dimgrey;
+     text-align: center;
+     font-size: 6vw;
+     border: solid;
+     border-color: slategrey;
+     background-color: white;
+     font-family: Palatino Linotype;
+ }
+.createNewAccount{
     width: 100%;
     height: 100%;
     border-radius: 22px;
     border: 2px dimgrey;
     text-align: center;
-    font-size: 6vw;
+    font-size: 3.7vw;
     border: solid;
     border-color: slategrey;
     background-color: white;
@@ -128,12 +140,16 @@ body {
     border-color: slategrey;
 }
 
+#enter_new_id{
+    font-size:3.7vw;
+    font-family: Palatino Linotype;
+}
 #enter_id{
-    font-size:6vw;
+    font-size:5vw;
     font-family: Palatino Linotype;
 }
 
-#add_info{
+#additional_info{
     font-size:3.5vw;
     font-family: Palatino Linotype;
 }
