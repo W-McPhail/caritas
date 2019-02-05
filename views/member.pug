@@ -48,7 +48,8 @@ html
                         input(type="hidden", name="meals_now _go", id="meals_now_go_input")
                         button(type='submit', class="submitButton" id="form_submit") %phrase%
             .additionalInfo
-                textarea #{extra_info}
+                //input(type = 'text', name = 'id', placeholder= '  Enter Additional Information (allergies, family size, etc.)', class="newaccount")
+                textarea(name='extra_info', placeholder= 'Enter Additional Information (allergies, family size, etc.)', class="idlogin", id="add_info", cols="40" rows="4")
 
 
 

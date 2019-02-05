@@ -12,7 +12,7 @@ body {
     grid-template-areas: "guest member" "Spanish newAccount";
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    height: 55vh;
+    height: 50vh;
     grid-row-gap: 10px;
     grid-column-gap: 30px;
 
@@ -110,7 +110,7 @@ body {
 
 .vl {
     border-left: 4px solid black;
-    height: 55vh;
+    height: 50vh;
     position: absolute;
     left: 50%;
     margin-left: -3px;
@@ -158,12 +158,28 @@ input{
     grid-row-gap: 10px;
     height: 50vh;
 }
-.memberScreen {
+.memberScreen{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(1,1fr);
+    grid-template-areas: "meals meals meals meals meals meals aI aI";
+    height: 50vh
+}
+.memberMeals {
+    width: 100%;
+    height: 100%;
+    grid-area: meals;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-row-gap: 10px;
-    height: 65vh;
+}
+.mealStay .memberScreen{
+    grid-template-columns: repeat(7, 1fr);
+
+}
+.additionalInfo{
+    grid-area: aI;
 }
 .mealStay, .mealToGO, .submitDiv {
     display: grid;
