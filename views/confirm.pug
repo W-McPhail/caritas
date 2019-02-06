@@ -6,14 +6,22 @@ html
             link(rel='stylesheet', href='/stylesheets/style.css')
             script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
             script(src="/js/frontend.js")
-            h1 Confirmed Order
+            .topContainer
+                .logoLeft
+                    img(id="logo_left", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
+                .header
+                    h1 Confirmed Order
+                .logoRight
+                    img(id="logo_right", src="/images/logo.png", width="80%", height="100%", alt="Caritas Logo")
 
     body
+
         .confirmPage
             p Thank you #{person_name}
-            p You submitted #{meals_stay} meals to stay and #{meals_go} meals to go!
+            p You submitted #{meals_stay} meal#{meals_stay != 1 ? "s" : ""} to stay and #{meals_go} meal#{meals_go != 1 ? "s" : ""} to go!
             .returnHome
                 a(href="/")
                     button(type="button",class = "homeButton") Start Over
 
 include footer
+

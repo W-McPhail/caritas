@@ -7,6 +7,14 @@
   "Caritas of Port Chester",
   "Caritas de Port Chester"
   ],
+  "new_account_header": [
+    "New Account",
+    "Cuenta Nueva"
+  ],
+  "additional_info": [
+    "Optional: Enter Additional Information (allergies, family size, etc.)",
+    "Opcional: Ingrese Información Adicional (alergias, tamaño de familia, etc.)"
+  ],
   "meals_to_stay": [
     "Meals To Stay",
     "Para Quedarse"
@@ -37,10 +45,18 @@
   ],
   "enter_id": [
     "Enter ID",
-    "Ingresa su ID"
+    "Ingresa una ID"
+  ],
+  "enter_new_id": [
+    "Enter ID",
+    "Ingresa una ID"
   ],
   "create_new_account": [
     "Create New Account",
     "Crea una Cuenta Nueva"
+  ],
+  "create_account": [
+    "Create Account",
+    "Crea Cuenta"
   ]
 }

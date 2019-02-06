@@ -47,7 +47,8 @@ router.post('/', async function (req, res, next) {
             max_meals_go: db_max_meals_go,
             meals_stay_prev: lastMealsStay,
             meals_go_prev: lastMealsGo,
-            extra_info: extra_info
+            extra_info: extra_info,
+            memberId: memberId
         };
         console.log(options);
         res.render('member', options);
