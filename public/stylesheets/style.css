@@ -303,7 +303,7 @@ img{
 .confirmPage{
     display:grid;
     grid-template-rows: repeat(3,1fr);
-    height: 60vh;
+    height: 50vh;
 }
 .confirmPage p{
     text-align: center;
