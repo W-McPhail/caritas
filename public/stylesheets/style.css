@@ -38,6 +38,7 @@ body {
 }
 .languageSwitch{
     text-align: center;
+    font-family: Palatino Linotype;
 }
 .guest {
     grid-area: guest;
@@ -319,6 +320,7 @@ img{
     border: solid;
     border-color: slategrey;
     font-size: 70px;
+    font-family: Palatino Linotype;
 }
 
 
