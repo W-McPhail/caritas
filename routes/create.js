@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-var database = require(".././database/database");
+var database = require("../backend/database");
+let language = require("../backend/language");
 /* GET home page. */
 router.get('/', async function (req, res, next) {
     res.render('newaccount', {title: 'Create New Account'});
@@ -14,7 +15,6 @@ router.post('/', async function (req, res, next) {
     if(person['identifier'] === identifier) {
         res.write("Id Taken");
         res.end();
-
         return
     }
     database.addToDb({identifier: identifier, extra: extra_info});
@@ -31,7 +31,9 @@ router.post('/', async function (req, res, next) {
         max_meals_go: db_max_meals_go,
         meals_stay_prev: 0,
         meals_go_prev: 0,
-        extra_info: extra_info
+        extra_info: extra_info,
+        translation: language.getTranslationFile(),
+        index: language.getLanguageIndex(req)
     });
 });
 module.exports = router;

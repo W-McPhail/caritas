@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-var database = require("../database/database");
+let database = require("../backend/database");
+let language = require("../backend/language");
 
 router.post('/', async function (req, res, next) {
     const type = req.body.type;
@@ -48,13 +49,23 @@ router.post('/', async function (req, res, next) {
             meals_stay_prev: lastMealsStay,
             meals_go_prev: lastMealsGo,
             extra_info: extra_info,
-            memberId: memberId
+            memberId: memberId,
+            translation: language.getTranslationFile(),
+            index: language.getLanguageIndex(req)
         };
         console.log(options);
         res.render('member', options);
     }
     else if (type === ("guest")) {
-        res.render('guest', {title: "Guest Login", max_meals_stay: 3, max_meals_go: 4});
+        res.render('guest',
+            {
+                title: "Guest Login",
+                max_meals_stay: 3,
+                max_meals_go: 4,
+                translation: language.getTranslationFile(),
+                index: language.getLanguageIndex(req)
+            });
+
     } else {
         res.write("we don't know what you tried to do! Sent type is '" + type + "'. Expected: member,guest");
         res.end();

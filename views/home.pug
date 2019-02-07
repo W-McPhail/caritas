@@ -1,5 +1,7 @@
 doctype html
 html(lang="en")
+
+    - var parsed= JSON.parse(translation);
     head
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
@@ -10,9 +12,10 @@ html(lang="en")
             .logoLeft
                 img(id="logo_left", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
             .header
-                h1(id="home_header") %phrase%
+                h1(id="home_header") #{parsed.home_header[index]}
             .logoRight
                 img(id="logo_right", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
+
 
     body
         .vl
@@ -21,19 +24,17 @@ html(lang="en")
                 form(action='/login', method='POST')
                     .guestLoginButton
                         input(type="hidden", name="type", value="guest")
-                        button(type='submit', name="Guest Button", class="loginButton", id="guest_login") %phrase%
+                        button(type='submit', name="Guest Button", class="loginButton", id="guest_login") #{parsed.guest_login[index]}
             form(action='/login', method='POST')
                 .member
                     input(type="hidden", name="type", value="member")
                     .memberID
-                        input(type = 'text', name = 'id', placeholder= '%phrase%', class="idlogin" id="enter_id")
+                        input(type = 'text', name = 'id', placeholder= parsed.enter_id[index], class="idlogin" id="enter_id")
                     .memberLoginButton
-                        button(type='submit', name="Member Login", class="loginButton" id="member_login") %phrase%
+                        button(type='submit', name="Member Login", class="loginButton" id="member_login") #{parsed.member_login[index]}
             .newAccount
                 .newLoginButton
-                    a(href='/create', id="create_new_account") %phrase%
-
-
+                    a(href='/create', id="create_new_account") #{parsed.create_new_account[index]}
 
 
 include footer
