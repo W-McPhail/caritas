@@ -9,7 +9,6 @@ var app = express();
 
 
 var indexRouter = require('./routes/home');
-var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var submit = require('./routes/submit');
 let create = require('./routes/create');
@@ -26,7 +25,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/submit', submit);
 app.use("/create", create);
@@ -45,6 +43,7 @@ app.use(function (err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
+    console.error(err);
     res.render('error');
 });
 

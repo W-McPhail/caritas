@@ -1,5 +1,6 @@
 doctype html
 html
+    - var parsed= JSON.parse(translation);
     head
         .welcome
             title= title
@@ -10,18 +11,18 @@ html
                 .logoLeft
                     img(id="logo_left", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
                 .header
-                    h1 Confirmed Order
+                    h1(id="confirm_order") #{parsed.confirm_order[index]}
                 .logoRight
                     img(id="logo_right", src="/images/logo.png", width="80%", height="100%", alt="Caritas Logo")
 
     body
 
         .confirmPage
-            p Thank you #{person_name}
+            p(id="thank_guest") #{parsed.thank_guest[index]} #{person_name}
             p You submitted #{meals_stay} meal#{meals_stay != 1 ? "s" : ""} to stay and #{meals_go} meal#{meals_go != 1 ? "s" : ""} to go!
             .returnHome
                 a(href="/")
-                    button(type="button",class = "homeButton") Start Over
+                    button(type="button",class = "homeButton" id="start_over") #{parsed.start_over[index]}
 
 include footer
 

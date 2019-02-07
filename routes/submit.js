@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-var database = require(".././database/database");
+let database = require("../backend/database");
+let language = require("../backend/language");
+
 /* GET home page. */
 router.post('/', async function (req, res, next) {
     let guest = req.body['type'] === "guest";
@@ -33,7 +35,10 @@ router.post('/', async function (req, res, next) {
         name = memberID;
         database.updatePerson(memberID, person);
     }
-    res.render("confirm", {person_name: name, meals_stay: meals_stay, meals_go: meals_go});
+    res.render("confirm", {person_name: name, meals_stay: meals_stay, meals_go: meals_go,
+        translation: language.getTranslationFile(),
+        index: language.getLanguageIndex(req)
+    });
 });
 
 module.exports = router;
