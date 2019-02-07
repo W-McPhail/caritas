@@ -58,5 +58,22 @@
   "create_account": [
     "Create Account",
     "Crea Cuenta"
+  ],
+  "confirm_order": [
+    "Confirm Order",
+    "Confirma Orden"
+  ],
+  "thank_guest": [
+    "Thank you, guest",
+    "Gracias, visita"
+  ],
+  "order_review": [
+    "You submitted x meals to stay and y meals to go!",
+    "¡Enviaste x comidas para quedarse y y comidas para ir! "
+  ],
+  ,
+  "start_over": [
+    "Start Over",
+    "Empieza de Nuevo "
   ]
 }
