@@ -2,7 +2,8 @@ let fs = require('fs');
 module.exports = {getTranslationFile, getLanguageIndex};
 
 function getTranslationFile() {
-    return fs.readFileSync(process.cwd() + "/public/lang/language.json", 'UTF-8');
+    let readFileSync = fs.readFileSync(process.cwd() + "/public/lang/language.json", 'UTF-8');
+    return readFileSync;
 }
 
 function getLanguageIndex(req) {

@@ -5,7 +5,10 @@ var database = require("../backend/database");
 let language = require("../backend/language");
 /* GET home page. */
 router.get('/', async function (req, res, next) {
-    res.render('newaccount', {title: 'Create New Account'});
+    res.render('newaccount', {title: 'Create New Account',
+        translation: language.getTranslationFile(),
+        index: language.getLanguageIndex(req)
+    });
 });
 
 router.post('/', async function (req, res, next) {
