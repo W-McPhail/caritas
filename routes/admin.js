@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var database = require(".././database/database");
+var database = require("../backend/database");
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {

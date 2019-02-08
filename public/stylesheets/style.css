@@ -278,6 +278,7 @@ img{
     font-family: Palatino Linotype;
     font-weight: bold;
     font-size: 5.6vw;
+    margin: 0;
 
 }
 .mealNumber{
@@ -349,7 +350,7 @@ img{
 .slider {
     position: absolute;
     cursor: pointer;
-    top: -8px;
+    top: -5px;
     left: -25px;
     right: -29px;
     bottom: -6px;
@@ -368,6 +369,7 @@ img{
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
+
 }
 
 input:checked + .slider {

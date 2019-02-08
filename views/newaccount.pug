@@ -1,5 +1,6 @@
 doctype html
 html(lang="en")
+    - var parsed= JSON.parse(translation);
     head
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
@@ -10,7 +11,7 @@ html(lang="en")
             .logoLeft
                 img(id="logo_left", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
             .header
-                h1(id="new_account_header") %phrase%
+                h1(id="new_account_header") #{parsed.new_account_header[index]}
             .logoRight
                 img(id="logo_right", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
 
@@ -18,10 +19,9 @@ html(lang="en")
         .newAccountPage
             form(action='/create', method='POST')
                 .enterID
-                    input(type='text', name='identifier', placeholder= '%phrase%', class="idlogin", id="enter_new_id")
+                    input(type='text', name='identifier', placeholder= parsed.enter_new_id[index], class="idlogin", id="enter_new_id")
                 .additionalInfo
-                    //input(type = 'text', name = 'id', placeholder= '  Enter Additional Information (allergies, family size, etc.)', class="newaccount")
-                    textarea(name='extra_info', placeholder= '%phrase%', class="idlogin", id="additional_info", cols="40" rows="4")
+                    textarea(name='extra_info', placeholder= parsed.additional_info[index], class="idlogin", id="additional_info", cols="40" rows="4")
                 .goButton
-                    button(type='submit', name="Create_Account", placeholder='%phrase%', class="createNewAccount", id="create_account") %phrase%
+                    button(type='submit', name="Create_Account", class="createNewAccount", id="create_account") #{parsed.create_account[index]}
     include footer

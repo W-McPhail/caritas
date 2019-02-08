@@ -1,5 +1,6 @@
 doctype html
 html
+    - var parsed= JSON.parse(translation);
     head
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
@@ -20,9 +21,9 @@ html
                 .mealStay
                     .labelContainer
                         .titleLabel
-                            p(class="pForAccess" id="meals_to_stay") %phrase%
+                            p(class="pForAccess" id="meals_to_stay") #{parsed.meals_to_stay[index]}
                         .mmLabel
-                            p(class="pForAccess" id="todays_limit") %phrase%: #{max_meals_stay}
+                            p(class="pForAccess" id="todays_limit") #{parsed.todays_limit[index]}: #{max_meals_stay}
                     .minusButton
                         button(type='button',class = "minus", onclick="if(document.getElementById('meals_now_stay').innerText > 0){document.getElementById('meals_now_stay').innerText--;}") -
                     .mealCounter
@@ -32,9 +33,9 @@ html
                 .mealToGO
                     .labelContainer
                         .titleLabel
-                            p(class="pForAccess" id="meals_to_go") %phrase%
+                            p(class="pForAccess" id="meals_to_go") #{parsed.meals_to_go[index]}
                         .mmLabel
-                            p(class="pForAccess" id ="todays_limit_go") %phrase%: #{max_meals_go}
+                            p(class="pForAccess" id ="todays_limit_go") #{parsed.todays_limit_go[index]}: #{max_meals_go}
                     .minusButton
                         button(type='button', class = "minus", onclick="if(document.getElementById('meals_now_go').innerText > 0){document.getElementById('meals_now_go').innerText--;}") -
                     .mealCounter
@@ -47,7 +48,7 @@ html
                         input(type="hidden", name="meals_now_stay", id="meals_now_stay_input")
                         input(type="hidden", name="meals_now _go", id="meals_now_go_input")
                         input(type="hidden", name="memberId", value= "" + memberId + "")
-                        button(type='submit', class="submitButton" id="form_submit") %phrase%
+                        button(type='submit', class="submitButton" id="form_submit") #{parsed.form_submit[index]}
             .additionalInfo
                 //input(type = 'text', name = 'id', placeholder= '  Enter Additional Information (allergies, family size, etc.)', class="newaccount")
                 textarea(name='extra_info', placeholder= 'Enter Additional Information (allergies, family size, etc.)', class="idlogin", id="add_info", cols="40" rows="4")
