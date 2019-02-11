@@ -39,6 +39,8 @@ body {
 .languageSwitch{
     text-align: center;
     font-family: Palatino Linotype;
+    position: relative;
+    bottom: 35px;
 }
 .guest {
     grid-area: guest;
@@ -193,7 +195,7 @@ input{
 }
 .mealStay, .mealToGO, .submitDiv {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 5px;
     height: 100%;
@@ -274,20 +276,11 @@ img{
     grid-column-end: 5;
     text-align:center;
 }
-.header h1{
+.header h1 {
     font-family: Palatino Linotype;
     font-weight: bold;
-    font-size: 5.6vw;
-    margin: 0;
-
-}
-.mealNumber{
-    /*position: absolute;*/
-    /*top: 5%;*/
-    /*left: 30%;*/
-    /*align-items: center;*/
-    /*display: flex;*/
-    /*vertical-align: middle;*/
+    font-size: 4.6vw;
+    margin: 2vw;
 }
 .submitForm{
     display: grid;

@@ -12,6 +12,8 @@ html
                     img(id="logo_left", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
                 .header
                     h1(id="confirm_order") #{parsed.confirm_order[index]}
+                    include lang_slider
+
                 .logoRight
                     img(id="logo_right", src="/images/logo.png", width="80%", height="100%", alt="Caritas Logo")
 
@@ -24,5 +26,4 @@ html
                 a(href="/")
                     button(type="button",class = "homeButton" id="start_over") #{parsed.start_over[index]}
 
-include lang_slider
 
