@@ -172,9 +172,9 @@ input{
 }
 .memberScreen{
     display: grid;
-    grid-template-columns: repeat(8,1fr);
-    grid-template-rows: repeat(2,1fr);
-    grid-template-areas: "meals meals meals meals meals meals aI aI" "footer footer footer ";
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(1,1fr);
+    grid-template-areas: "meals meals meals meals meals meals aI aI";
     height: 50vh
 }
 .memberMeals {
