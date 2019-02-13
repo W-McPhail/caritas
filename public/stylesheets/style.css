@@ -44,6 +44,7 @@ body {
     position: relative;
     bottom: 35px;
 }
+
 .guest {
     grid-area: guest;
     display: grid;
@@ -352,6 +353,15 @@ img{
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
+
+    height: 100%;
+    width: 100%;
+    left: 100%;
+    border-radius: 50px;
+    border: 2px dimgrey;
+    border: solid;
+    border-color: black;
+
 }
 
 .slider:before {
