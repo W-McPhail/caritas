@@ -51,6 +51,7 @@ html
                         input(type="hidden", name="memberId", value= "" + memberId + "")
                         //Copy text box into this form and then connect them so it doesn't break CSS
                         button(type='submit', class="submitButton" id="form_submit") #{parsed.form_submit[index]}
-                    .additionalInfo
-                        textarea(name='extra_info', placeholder= 'Enter Additional Information (allergies, family size, etc.)', class="idlogin", id="add_info", cols="40" rows="4") #{extra_info}
+                //fix form here
+            .additionalInfo
+                textarea(name='extra_info', placeholder= 'Enter Additional Information (allergies, family size, etc.)', class="idlogin", id="add_info", cols="40" rows="4") #{extra_info}
 
