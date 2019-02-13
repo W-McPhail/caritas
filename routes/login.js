@@ -35,7 +35,7 @@ router.post('/', async function (req, res, next) {
             lastMealsStay = db_max_meals_stay;
         }
 
-
+        console.log(extra_info);
         let tooManyGoLast = false;
         if (lastMealsGo > db_max_meals_go) {
             tooManyGoLast = true;
