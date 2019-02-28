@@ -150,6 +150,9 @@ body {
     border: 2px dimgrey;
     border: solid;
     border-color: slategrey;
+    font-size:3.5vw;
+    font-family: Palatino Linotype;
+    font-color: slategrey;
 }
 
 #enter_new_id{
@@ -201,6 +204,8 @@ input{
 }
 .additionalInfo{
     grid-area: aI;
+    font-size:3.5vw;
+    font-family: Palatino Linotype;
 }
 .mealStay, .mealToGO, .submitDiv {
     display: grid;
