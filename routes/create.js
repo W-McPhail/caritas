@@ -16,7 +16,11 @@ router.post('/', async function (req, res, next) {
     let extra_info = req.body['extra_info'];
     let person = await database.getPerson(identifier);
     if(person !=null && person['identifier'] === identifier) {
-        res.write("Id Taken");
+        res.render('newaccount', {title: 'Create New Account',
+            translation: language.getTranslationFile(),
+            index: language.getLanguageIndex(req),
+            idTaken: true
+        });
         res.end();
         return
     }

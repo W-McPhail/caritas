@@ -1,6 +1,7 @@
 doctype html
 html
     - var parsed= JSON.parse(translation);
+
     head
         .welcome
             title= title
@@ -13,7 +14,6 @@ html
                 .header
                     h1(id="confirm_order") #{parsed.confirm_order[index]}
                     include lang_slider
-
                 .logoRight
                     img(id="logo_right", src="/images/logo.png", width="80%", height="100%", alt="Caritas Logo")
 
