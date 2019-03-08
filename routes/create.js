@@ -16,7 +16,11 @@ router.post('/', async function (req, res, next) {
     let extra_info = req.body['extra_info'];
     let person = await database.getPerson(identifier);
     if(person !=null && person['identifier'] === identifier) {
-        res.write("Id Taken");
+        res.render('newaccount', {title: 'Create New Account',
+            translation: language.getTranslationFile(),
+            index: language.getLanguageIndex(req),
+            idTaken: true
+        });
         res.end();
         return
     }
@@ -36,7 +40,8 @@ router.post('/', async function (req, res, next) {
         meals_go_prev: 0,
         extra_info: extra_info,
         translation: language.getTranslationFile(),
-        index: language.getLanguageIndex(req)
+        index: language.getLanguageIndex(req),
+        memberId: identifier
     });
 });
 module.exports = router;
