@@ -74,5 +74,9 @@
   "start_over": [
     "Start Over",
     "Empieza de Nuevo "
+  ],
+  "idTaken_create": [
+    "Sorry, this ID is taken already, please try another. If you believe this to be an error, please contact Caritas administrators.",
+    "Lo sentimos, esta identificación ya está tomada, por favor pruebe con otra. Si cree que esto es un error, comuníquese con los administradores de Caritas."
   ]
 }
