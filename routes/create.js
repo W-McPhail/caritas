@@ -40,7 +40,8 @@ router.post('/', async function (req, res, next) {
         meals_go_prev: 0,
         extra_info: extra_info,
         translation: language.getTranslationFile(),
-        index: language.getLanguageIndex(req)
+        index: language.getLanguageIndex(req),
+        memberId: identifier
     });
 });
 module.exports = router;
