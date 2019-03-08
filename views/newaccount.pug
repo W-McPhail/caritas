@@ -17,8 +17,8 @@ html(lang="en")
                 img(id="logo_right", src="/images/logo.png", width="80%", height="100%", alt="Cartias Logo")
 
     body
-
-
+        if idTaken
+            p(id="idTaken_create") #{parsed.idTaken_create[index]}
         .newAccountPage
             form(action='/create', method='POST')
                 .enterID
