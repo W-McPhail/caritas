@@ -53,5 +53,7 @@ html
                         button(type='submit', class="submitButton" id="form_submit") #{parsed.form_submit[index]}
                 //fix form here
             .additionalInfo
+                textarea(name='first_name', placeholder= "Optional: First Name", class="firstname", id="add_firstname", rows="1", cols="1")
+                textarea(name='last_name', placeholder= "Optional: Last Name", class="lastname", id="add_lastname", rows="1", cols="1")
                 textarea(name='extra_info', placeholder= 'Enter Additional Information (allergies, family size, etc.)', class="idlogin", id="add_info", cols="40" rows="4") #{extra_info}
 
