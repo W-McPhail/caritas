@@ -1,9 +1,11 @@
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://127.0.0.1:27017/";
+var url = "mongodb+srv://db:flipAcoin22{}@mongodbc0.vvmio.mongodb.net/admin?authSource=admin&replicaSet=atlas-4dd97d-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
 console.log("Starting db");
 var database;
 MongoClient.connect(url, async function (err, db) {
-    if (err) throw err;
+    if (err) {
+        console.log("DB err. Deprecated")
+    };
     database = db.db("caritas");
 
     let mealsState = await getMealsState();
